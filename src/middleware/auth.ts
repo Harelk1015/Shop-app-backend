@@ -8,6 +8,8 @@ import generateAccessToken from '../utils/generateAccessToken';
 
 interface IAuthMiddlewareRequest extends express.Request {
   userId?: string;
+  user?: any;
+  accessToken?: string;
 }
 
 interface IVerify {
@@ -28,8 +30,9 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 
     data = jwt.verify(token, 'secret') as IVerify;
 
-    console.log(data);
     userDocument = await UserDB.findById(data._id, { _id: 0 });
+
+    req.user = userDocument as IUser;
 
     if (!userDocument) {
       return next(new HttpError('unable to auth', 401));
@@ -37,13 +40,12 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 
     next();
   } catch (e: any) {
-    // return next(new HttpError(`unable to auth because of ${e}`, 400));
+    // user failes auth and now checking for validity of refresh token
+
     const refreshToken = (req.header('AuthorizationRefresh') as string).replace(
       'Bearer ',
       ''
     );
-
-    data = jwt.verify(refreshToken, 'secret') as IVerify;
 
     if (refreshToken == null) {
       return next(
@@ -51,14 +53,13 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
       );
     }
 
+    data = jwt.verify(refreshToken, 'secret') as IVerify;
+
     const user = await UserDB.findById(data._id, { _id: 0 });
 
+    req.user = user;
+
     if (user) {
-      // user.tokens.forEach((token) => {
-      //   if (token.token !== refreshToken) {
-      //     return next (new HttpError('refresh token too old, login again', 401));
-      //   }
-      // });
       let userTokens: string[] = [];
 
       user.tokens.map((token) => {
@@ -74,11 +75,9 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 
     const accessToken = generateAccessToken(verifiedUserId._id);
 
-    res.json({ accessToken });
+    req.accessToken = accessToken;
 
     next();
-
-    // await user!.save();
   }
 };
 
