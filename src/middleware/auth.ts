@@ -81,6 +81,17 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
   }
 };
 
+const adminAuth: RequestHandler = (req: IAuthMiddlewareRequest, res, next) => {
+  const user = req.user as IUser;
+
+  if (user.role !== 'admin') {
+    return next(new HttpError('User is not admin', 401));
+  }
+
+  next()
+};
+
+
 // const adminAuth = async (
 //   req: IAdminAuthM_iddlewareRequest,
 //   res: IAdminAuthM_iddlewareResponse,
@@ -142,5 +153,5 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 
 export {
   auth,
-  // adminAuth
+  adminAuth
 };
