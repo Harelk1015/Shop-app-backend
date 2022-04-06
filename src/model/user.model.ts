@@ -1,12 +1,17 @@
 import mongoose from 'mongoose';
 
+interface Token {
+  token: string
+  _id: mongoose.Types.ObjectId
+}
+
 interface IUser extends mongoose.Document {
   readonly username: string;
   email: string;
   password: string;
   role: string;
   favorites: number[];
-  tokens: any[]
+  tokens: Token[]
 }
 
 const userSchema: mongoose.Schema = new mongoose.Schema(

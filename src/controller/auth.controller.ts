@@ -1,10 +1,17 @@
-import { RequestHandler } from 'express';
+import express, { RequestHandler } from 'express';
 import HttpError from '../model/http-error';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import generateAccessToken from '../utils/generateAccessToken';
 
 import { UserDB, IUser } from '../model/user.model';
+import mongoose from 'mongoose';
+
+interface IAuthMiddlewareRequest extends express.Request {
+  userId?: string;
+  user?: any;
+  accessToken?: string;
+}
 
 export const register: RequestHandler = async (req, res, next) => {
   if (req.body.username.length < 6 || req.body.username.length > 26) {
@@ -67,7 +74,7 @@ export const register: RequestHandler = async (req, res, next) => {
       expiresIn: '7 days',
     });
 
-    newUser.tokens = [{ token: newToken }];
+    newUser.tokens = [{ token: newToken, _id: new mongoose.Types.ObjectId() }];
 
     await newUser
       .save()
@@ -115,22 +122,38 @@ export const login: RequestHandler = async (req, res, next) => {
       userByEmail.tokens.pop();
     }
 
-    userByEmail.tokens = [{ token: refreshToken }, ...userByEmail.tokens];
+    userByEmail.tokens = [
+      { token: refreshToken, _id: new mongoose.Types.ObjectId() },
+      ...userByEmail.tokens,
+    ];
 
     await userByEmail.save();
+
+    // Create new user object without password inorder to send it back to the client
+    const user = userByEmail;
+    user.password = '';
 
     res.status(200).json({
       message: 'logged in successfully',
       data: {
-        username: userByEmail.username,
-        email: req.body.email,
+        user,
         accessToken: newToken,
         refreshToken,
-        _id: userByEmail._id
+        _id: userByEmail._id,
       },
     });
     return;
   } catch (error) {
     return next(new HttpError(`${error} error`, 500));
   }
+};
+
+export const autoLogin: RequestHandler = async (
+  req: IAuthMiddlewareRequest,
+  res,
+  next
+) => {
+  // Gets the token
+  console.log(req.user);
+  res.status(200).json({ user: req.user });
 };

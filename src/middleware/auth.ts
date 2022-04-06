@@ -98,6 +98,7 @@ const adminAuth: RequestHandler = (req: IAuthMiddlewareRequest, res, next) => {
   const user = req.user as IUser;
 
   if (user.role !== 'admin') {
+    // Checks if the user has admin role
     return next(new HttpError('User is not admin', 401));
   }
 
