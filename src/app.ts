@@ -11,16 +11,18 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
+app.use(function (req, res, next) {
+  //Enabling CORS
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+  res.header(
     'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization ,AuthorizationRefresh, user'
+    'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret,Authorization ,AuthorizationRefresh, user'
   );
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-
   next();
 });
+
+('Authorization ,AuthorizationRefresh, user');
 
 app.use('/auth', authRoutes);
 app.use('/products', productRouter);
