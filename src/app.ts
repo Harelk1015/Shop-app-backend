@@ -1,17 +1,18 @@
 import express, { Request, Response, NextFunction } from 'express';
 import './db/mongoose';
 import HttpError from './model/http-error';
+import cors from 'cors';
 
 import authRoutes from './routes/auth.router';
 import productRouter from './routes/product.router';
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, Authorization,AuthorizationRefresh, user'
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
     'Access-Control-Allow-Methods',
     'OPTIONS, GET, POST, PATCH, DELETE'
   );
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   next();
 });
