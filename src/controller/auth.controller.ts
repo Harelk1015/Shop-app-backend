@@ -76,10 +76,7 @@ export const register: RequestHandler = async (req, res, next) => {
 
     newUser.tokens = [{ token: newToken, _id: new mongoose.Types.ObjectId() }];
 
-    await newUser
-      .save()
-      .then()
-      .catch((err) => console.log(err));
+    await newUser.save();
 
     res.status(201).json({
       message: 'user created successfuly',
@@ -153,7 +150,5 @@ export const autoLogin: RequestHandler = async (
   res,
   next
 ) => {
-  // Gets the token
-  console.log(req.user);
   res.status(200).json({ user: req.user });
 };

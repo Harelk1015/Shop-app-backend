@@ -2,8 +2,6 @@ import express, { Request, Response, NextFunction } from 'express';
 import './db/mongoose';
 import HttpError from './model/http-error';
 
-import cors from 'cors';
-
 import authRoutes from './routes/auth.router';
 import productRouter from './routes/product.router';
 
@@ -11,11 +9,6 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(
-  cors({
-    origin: '*',
-  })
-);
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
