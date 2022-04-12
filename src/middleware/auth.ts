@@ -29,8 +29,12 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 		// Verfiy the token and get the userId --- data = token that has the user id
 		data = jwt.verify(token, 'secret') as IVerify;
 
+		if (!data) {
+			return next(new HttpError('unable to auth', 401));
+		}
+
 		// Get the user object that matches the ID recived from the verification
-		userDocument = await UserDB.findById(data._id, { _id: 0 });
+		userDocument = await UserDB.findById(data._id);
 
 		// Passes the user object for the later adminAuth auth
 		req.user = userDocument as IUser;
@@ -55,7 +59,7 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 			data = jwt.verify(refreshToken, 'secret') as IVerify;
 
 			// Get the user object that matches the ID recived from the verification
-			const user = await UserDB.findById(data._id, { _id: 0 });
+			const user = await UserDB.findById(data._id);
 
 			// Passes the user object for the later adminAuth auth
 			req.user = user;

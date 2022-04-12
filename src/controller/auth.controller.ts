@@ -1,4 +1,4 @@
-import express, { RequestHandler } from 'express';
+import { RequestHandler } from 'express';
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
@@ -6,12 +6,7 @@ import HttpError from '../model/http-error';
 import generateAccessToken from '../utils/generateAccessToken';
 
 import { UserDB, IUser } from '../model/user.model';
-
-interface IAuthMiddlewareRequest extends express.Request {
-	userId?: string;
-	user?: any;
-	accessToken?: string;
-}
+import { IAuthMiddlewareRequest } from '../model/express/request/auth.request';
 
 export const register: RequestHandler = async (req, res, next) => {
 	if (req.body.username.length < 6 || req.body.username.length > 26) {
@@ -94,7 +89,7 @@ export const register: RequestHandler = async (req, res, next) => {
 	}
 };
 
-export const login: RequestHandler = async (req, res, next) => {
+export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 	// find email match
 
 	try {
@@ -131,6 +126,7 @@ export const login: RequestHandler = async (req, res, next) => {
 
 		// Create new user object without password inorder to send it back to the client
 		const user = userByEmail;
+		req.user = user;
 		user.password = '';
 
 		res.status(200).json({

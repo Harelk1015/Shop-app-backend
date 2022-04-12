@@ -6,7 +6,7 @@ import {
 	ICreateProductMiddlewareRequest,
 	IGetProductsMiddlewareRequest,
 	IGetProductMiddlewareRequest,
-} from '../model/express/request/product.response';
+} from '../model/express/request/product.request';
 
 export const createProduct: RequestHandler = async (req: ICreateProductMiddlewareRequest, res, next) => {
 	const { body } = req;
@@ -31,7 +31,7 @@ export const createProduct: RequestHandler = async (req: ICreateProductMiddlewar
 	}
 };
 
-export const getProducts: RequestHandler = async (req: IGetProductsMiddlewareRequest, res) => {
+export const getProducts: RequestHandler = async (req: IGetProductsMiddlewareRequest, res, next) => {
 	const { sex } = req.body;
 	const { kind } = req.body;
 

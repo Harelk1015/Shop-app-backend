@@ -21,5 +21,6 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'array-callback-return': 'off',
 		'max-len': 'off',
+		'arrow-body-style': 'off',
 	},
 };
