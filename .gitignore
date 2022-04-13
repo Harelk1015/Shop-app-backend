@@ -14,7 +14,7 @@ node_modules
 
 # misc
 .DS_Store
-nodemon.json
+/nodemon.json
 .env
 
 
