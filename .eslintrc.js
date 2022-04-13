@@ -22,5 +22,6 @@ module.exports = {
 		'array-callback-return': 'off',
 		'max-len': 'off',
 		'arrow-body-style': 'off',
+		'object-curly-newline': 'off',
 	},
 };

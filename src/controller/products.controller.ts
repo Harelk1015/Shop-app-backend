@@ -9,8 +9,6 @@ import {
 } from '../model/express/request/product.request';
 
 export const createProduct: RequestHandler = async (req: ICreateProductMiddlewareRequest, res, next) => {
-	const { body } = req;
-
 	try {
 		const newProduct: IProduct = new ProductDB({
 			name: req.body.name,
@@ -20,20 +18,19 @@ export const createProduct: RequestHandler = async (req: ICreateProductMiddlewar
 			imageUrl: req.body.imageUrl,
 		});
 
-		await newProduct
+		newProduct
 			.save()
 			.then((respose) => {
 				res.status(201).json({ message: newProduct });
 			})
-			.catch(() => next(new HttpError('Product creation failed', 401)));
+			.catch(() => next(new HttpError('Product creation failed', 403)));
 	} catch (err) {
-		return next(new HttpError('Product creation failed', 401));
+		return next(new HttpError('Product creation failed', 403));
 	}
 };
 
 export const getProducts: RequestHandler = async (req: IGetProductsMiddlewareRequest, res, next) => {
-	const { sex } = req.body;
-	const { kind } = req.body;
+	const { sex, kind } = req.body;
 
 	const products: IProduct[] = await ProductDB.find({
 		'category.sex': sex,
@@ -45,12 +42,43 @@ export const getProducts: RequestHandler = async (req: IGetProductsMiddlewareReq
 
 export const getProduct: RequestHandler = async (req: IGetProductMiddlewareRequest, res, next) => {
 	const { _id } = req.body;
+	try {
+		const product = await ProductDB.findOne({
+			_id,
+		});
 
-	const product = await ProductDB.findOne({
-		_id,
-	});
+		if (!product) {
+			return next(new HttpError('product not found', 401));
+		}
 
-	res.status(200).json({ product });
+		res.status(200).json({ product });
+	} catch (err) {
+		return next(new HttpError('id not found', 404));
+	}
 };
 
-export const editProduct: RequestHandler = (req, res, next) => {};
+export const editProduct: RequestHandler = async (req, res, next) => {
+	const { _id, prodName, prodPrice, prodSizes } = req.body;
+
+	try {
+		const product = await ProductDB.findOne({
+			_id,
+		});
+
+		if (!product) {
+			return next(new HttpError('product not found', 401));
+		}
+
+		product.name = prodName;
+		product.price = prodPrice;
+		product.sizes = prodSizes;
+
+		console.log(product);
+
+		await product.save();
+
+		res.status(200).json({ message: 'product changed successfuly', _id });
+	} catch (err) {
+		return next(new HttpError('couldnt edit product', 404));
+	}
+};
