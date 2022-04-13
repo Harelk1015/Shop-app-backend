@@ -27,7 +27,7 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 		const token = (req.header('Authorization') as string).replace('Bearer ', '');
 
 		// Verfiy the token and get the userId --- data = token that has the user id
-		data = jwt.verify(token, 'secret') as IVerify;
+		data = jwt.verify(token, process.env.JWT_KEY!) as IVerify;
 
 		if (!data) {
 			return next(new HttpError('unable to auth', 401));
@@ -56,7 +56,7 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 			}
 
 			// Verfiy the token and get the userId --- data = token that has the user id
-			data = jwt.verify(refreshToken, 'secret') as IVerify;
+			data = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
 
 			// Get the user object that matches the ID recived from the verification
 			const user = await UserDB.findById(data._id);
@@ -78,7 +78,7 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 			}
 
 			// Gets the id of the verified user inorder to generate new access token
-			const verifiedUserId = jwt.verify(refreshToken, 'secret') as IVerify;
+			const verifiedUserId = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
 
 			// Generates new access token
 			const accessToken = generateAccessToken(verifiedUserId._id);

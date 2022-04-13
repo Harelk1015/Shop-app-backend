@@ -16,6 +16,7 @@ export const register: RequestHandler = async (req, res, next) => {
 	const matchingUsername = await UserDB.findOne({
 		username: req.body.username,
 	});
+
 	if (matchingUsername) {
 		return next(new HttpError('username already exists', 400));
 	}
@@ -63,7 +64,7 @@ export const register: RequestHandler = async (req, res, next) => {
 			role: 'user',
 		});
 
-		const newToken = jwt.sign({ id: newUser._id }, 'secret', {
+		const newToken = jwt.sign({ id: newUser._id }, process.env.JWT_KEY!, {
 			expiresIn: '7 days',
 		});
 
@@ -108,7 +109,7 @@ export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, ne
 		// Create new token to insert
 
 		const newToken = generateAccessToken(userByEmail._id);
-		const refreshToken = jwt.sign({ _id: userByEmail._id }, 'secret');
+		const refreshToken = jwt.sign({ _id: userByEmail._id }, process.env.JWT_KEY!);
 
 		if (userByEmail.tokens.length === 5) {
 			userByEmail.tokens.pop();

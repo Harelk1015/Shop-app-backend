@@ -1,12 +1,14 @@
 {
-    "restartable": "rs",
-    "ignore": [".git", "node_modules/", "dist/", "coverage/"],
-    "watch": ["src/"],
-    "execMap": {
-      "ts": "node -r ts-node/register"
-    },
-    "env": {
-      "NODE_ENV": "development"
-    },
-    "ext": "js,json,ts"
-  }
+	"restartable": "rs",
+	"ignore": [".git", "node_modules/", "dist/", "coverage/"],
+	"watch": ["src/"],
+	"execMap": {
+		"ts": "node -r ts-node/register"
+	},
+	"env": {
+		"DB_USER": "user",
+		"DB_PASSWORD": "ySuVZNb4Jq90JRg3",
+		"JWT_KEY": "secret"
+	},
+	"ext": "js,json,ts"
+}
