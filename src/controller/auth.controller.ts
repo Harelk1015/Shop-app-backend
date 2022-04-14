@@ -99,7 +99,6 @@ export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, ne
 		if (!userByEmail) {
 			return next(new HttpError('This email doesnt match any user', 400));
 		}
-
 		const compareResults = await bcrypt.compare(req.body.password, userByEmail.password);
 
 		if (!compareResults) {

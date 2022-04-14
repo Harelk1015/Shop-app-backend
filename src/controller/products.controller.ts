@@ -82,3 +82,15 @@ export const editProduct: RequestHandler = async (req, res, next) => {
 		return next(new HttpError('couldnt edit product', 404));
 	}
 };
+
+export const removeProduct: RequestHandler = async (req, res, next) => {
+	const { _id } = req.body;
+
+	try {
+		await ProductDB.findByIdAndRemove(_id);
+
+		res.status(202).json({ message: 'product deleted successfully' });
+	} catch (err) {
+		return next(new HttpError('could not find and delete product', 404));
+	}
+};
