@@ -4,7 +4,7 @@ import {
 	editProduct,
 	getProduct,
 	getProducts,
-	removeProduct,
+	deleteProduct,
 } from '../controller/products.controller';
 import { auth, adminAuth } from '../middleware/auth';
 
@@ -18,6 +18,6 @@ router.post('/get-product', getProduct);
 
 router.post('/edit-product', auth, adminAuth, editProduct);
 
-router.post('/delete-product', auth, adminAuth, removeProduct);
+router.post('/delete-product', auth, adminAuth, deleteProduct);
 
 export default router;

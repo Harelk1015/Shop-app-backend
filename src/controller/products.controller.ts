@@ -83,11 +83,15 @@ export const editProduct: RequestHandler = async (req, res, next) => {
 	}
 };
 
-export const removeProduct: RequestHandler = async (req, res, next) => {
+export const deleteProduct: RequestHandler = async (req, res, next) => {
 	const { _id } = req.body;
 
 	try {
-		await ProductDB.findByIdAndRemove(_id);
+		const product = await ProductDB.findByIdAndRemove(_id);
+
+		if (!product) {
+			return next(new HttpError('Could not find product and delete', 404));
+		}
 
 		res.status(202).json({ message: 'product deleted successfully' });
 	} catch (err) {

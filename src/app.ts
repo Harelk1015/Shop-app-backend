@@ -5,6 +5,7 @@ import HttpError from './model/http-error';
 import authRoutes from './routes/auth.router';
 import productRouter from './routes/product.router';
 import userRouter from './routes/user.router';
+import ticketRouter from './routes/ticket.router';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 app.use('/auth', authRoutes);
 app.use('/products', productRouter);
 app.use('/user', userRouter);
+app.use('/ticket', ticketRouter);
 
 // eslint-disable-next-line no-unused-vars
 app.use((req, res, next) => {
