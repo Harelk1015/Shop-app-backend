@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import './db/mongoose';
+import cors from 'cors';
 import HttpError from './model/http-error';
 
 import authRoutes from './routes/auth.router';
@@ -8,20 +9,21 @@ import userRouter from './routes/user.router';
 import ticketRouter from './routes/ticket.router';
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader(
-		'Access-Control-Allow-Headers',
-		'Origin, X-Requested-With, Content-Type, Accept, Authorization ,AuthorizationRefresh ,user',
-	);
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PATCH, DELETE, PUT');
+// app.use((req, res, next) => {
+// 	res.setHeader('Access-Control-Allow-Origin', '*');
+// 	res.setHeader(
+// 		'Access-Control-Allow-Headers',
+// 		'Origin, X-Requested-With, Content-Type, Accept, Authorization ,AuthorizationRefresh ,user',
+// 	);
+// 	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PATCH, DELETE, PUT');
 
-	next();
-});
+// 	next();
+// });
 
 app.use('/auth', authRoutes);
 app.use('/products', productRouter);
