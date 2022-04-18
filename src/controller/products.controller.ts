@@ -1,4 +1,5 @@
 import { RequestHandler } from 'express';
+import mongoose from 'mongoose';
 import HttpError from '../model/http-error';
 import { IProduct, ProductDB } from '../model/product.model';
 
@@ -10,20 +11,26 @@ import {
 
 export const createProduct: RequestHandler = async (req: ICreateProductMiddlewareRequest, res, next) => {
 	try {
+		const newProdSizes = req.body.sizes.map((size) => {
+			return { _id: new mongoose.Types.ObjectId(), size };
+		});
+
+		console.log(newProdSizes);
+
 		const newProduct: IProduct = new ProductDB({
 			name: req.body.name,
 			price: req.body.price,
 			category: { kind: req.body.category.kind, sex: req.body.category.sex },
-			sizes: req.body.sizes,
+			sizes: newProdSizes,
 			imageUrl: req.body.imageUrl,
 		});
 
 		newProduct
 			.save()
-			.then((respose) => {
+			.then(() => {
 				res.status(201).json({ message: newProduct });
 			})
-			.catch(() => next(new HttpError('Product creation failed', 403)));
+			.catch((err) => next(new HttpError(err, 403)));
 	} catch (err) {
 		return next(new HttpError('Product creation failed', 403));
 	}

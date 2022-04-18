@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.router';
 import productRouter from './routes/product.router';
 import userRouter from './routes/user.router';
 import ticketRouter from './routes/ticket.router';
+import cartRouter from './routes/cart.router';
 
 const app = express();
 app.use(cors());
@@ -14,21 +15,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use((req, res, next) => {
-// 	res.setHeader('Access-Control-Allow-Origin', '*');
-// 	res.setHeader(
-// 		'Access-Control-Allow-Headers',
-// 		'Origin, X-Requested-With, Content-Type, Accept, Authorization ,AuthorizationRefresh ,user',
-// 	);
-// 	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PATCH, DELETE, PUT');
-
-// 	next();
-// });
-
 app.use('/auth', authRoutes);
 app.use('/products', productRouter);
 app.use('/user', userRouter);
 app.use('/ticket', ticketRouter);
+app.use('/cart', cartRouter);
 
 // eslint-disable-next-line no-unused-vars
 app.use((req, res, next) => {

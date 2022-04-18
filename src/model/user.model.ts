@@ -1,8 +1,19 @@
+/* eslint-disable no-unused-expressions */
 import mongoose from 'mongoose';
+import { IProduct } from './product.model';
 
 interface Token {
 	token: string;
 	_id: mongoose.Types.ObjectId;
+}
+
+export interface ICart {
+	_id: mongoose.Types.ObjectId;
+	name: string;
+	price: number;
+	size: number;
+	quantity: number;
+	imageUrl: string;
 }
 
 interface IUser extends mongoose.Document {
@@ -12,6 +23,7 @@ interface IUser extends mongoose.Document {
 	role: string;
 	favorites: number[];
 	tokens: Token[];
+	cart: ICart[];
 }
 
 const userSchema: mongoose.Schema = new mongoose.Schema(
@@ -43,11 +55,25 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
 			type: [],
 			required: true,
 			ref: 'Product',
+			default: [],
 		},
 		tokens: {
 			type: [
 				{
 					token: { type: String },
+				},
+			],
+			default: [],
+		},
+		cart: {
+			type: [
+				{
+					_id: mongoose.Types.ObjectId,
+					name: String,
+					price: Number,
+					size: Number,
+					quantity: Number,
+					imageUrl: String,
 				},
 			],
 			default: [],
