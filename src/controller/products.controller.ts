@@ -8,6 +8,7 @@ import {
 	IGetProductsMiddlewareRequest,
 	IGetProductMiddlewareRequest,
 } from '../model/express/request/product.request';
+import { IUser, UserDB } from '../model/user.model';
 
 export const createProduct: RequestHandler = async (req: ICreateProductMiddlewareRequest, res, next) => {
 	try {
@@ -67,6 +68,10 @@ export const getProduct: RequestHandler = async (req: IGetProductMiddlewareReque
 export const editProduct: RequestHandler = async (req, res, next) => {
 	const { _id, prodName, prodPrice, prodSizes } = req.body;
 
+	const sizes = prodSizes.map((size: string) => {
+		return { _id: new mongoose.Types.ObjectId(), size };
+	});
+
 	try {
 		const product = await ProductDB.findOne({
 			_id,
@@ -78,9 +83,7 @@ export const editProduct: RequestHandler = async (req, res, next) => {
 
 		product.name = prodName;
 		product.price = prodPrice;
-		product.sizes = prodSizes;
-
-		console.log(product);
+		product.sizes = sizes;
 
 		await product.save();
 
@@ -94,11 +97,28 @@ export const deleteProduct: RequestHandler = async (req, res, next) => {
 	const { _id } = req.body;
 
 	try {
+		// Deletes the product from the shop
 		const product = await ProductDB.findByIdAndRemove(_id);
 
 		if (!product) {
 			return next(new HttpError('Could not find product and delete', 404));
 		}
+
+		// Deletes the product from all user's cart
+
+		// (await UserDB.find()).forEach((user: IUser) => {
+		// 	users.push(user);
+		// });
+
+		// const asd = await UserDB.find();
+
+		// users.forEach((user) => {
+		// 	user.cart.filter((product) => {
+		// 		return product._id === _id;
+		// 	});
+		// });
+
+		// UserDB.
 
 		res.status(202).json({ message: 'product deleted successfully' });
 	} catch (err) {

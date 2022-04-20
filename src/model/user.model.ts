@@ -8,6 +8,7 @@ interface Token {
 }
 
 export interface ICart {
+	parentId: mongoose.Types.ObjectId;
 	_id: mongoose.Types.ObjectId;
 	name: string;
 	price: number;
@@ -69,6 +70,7 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
 			type: [
 				{
 					_id: mongoose.Types.ObjectId,
+					parentId: mongoose.Types.ObjectId,
 					name: String,
 					price: Number,
 					size: Number,
