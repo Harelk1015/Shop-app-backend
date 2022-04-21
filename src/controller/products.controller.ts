@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import { RequestHandler } from 'express';
 import mongoose from 'mongoose';
 import HttpError from '../model/http-error';
@@ -124,4 +125,16 @@ export const deleteProduct: RequestHandler = async (req, res, next) => {
 	} catch (err) {
 		return next(new HttpError('could not find and delete product', 404));
 	}
+};
+export const navSearch: RequestHandler = async (req, res, next) => {
+	const searchInput = req.body.searchInput.trim();
+
+	let searchResults = await ProductDB.find({
+		name: { $regex: new RegExp('^' + searchInput + '.*', 'i') },
+	}).exec();
+
+	// Returns only 10 items
+	searchResults = searchResults.slice(0, 10);
+
+	res.status(200).json({ products: searchResults });
 };

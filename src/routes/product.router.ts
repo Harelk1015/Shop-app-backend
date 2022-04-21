@@ -5,6 +5,7 @@ import {
 	getProduct,
 	getProducts,
 	deleteProduct,
+	navSearch,
 } from '../controller/products.controller';
 import { auth, adminAuth } from '../middleware/auth';
 
@@ -15,6 +16,8 @@ router.post('/add-product', auth, adminAuth, createProduct);
 router.post('/get-products', getProducts);
 
 router.post('/get-product', getProduct);
+
+router.post('/nav-search', navSearch);
 
 router.post('/edit-product', auth, adminAuth, editProduct);
 
