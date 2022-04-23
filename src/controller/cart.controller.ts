@@ -32,6 +32,11 @@ export const makeCart: RequestHandler = async (req: ICartMiddlewareRequest, res,
 			return item._id.toHexString() === _id;
 		});
 
+		// const existingCartItem = user.cart.map((item) => {
+		// 	if (item.parentId === _id && item.size === size) {
+		// 	}
+		// });
+
 		const existingCartItem = user.cart[existingCartItemIndex];
 
 		if (existingCartItem) {
