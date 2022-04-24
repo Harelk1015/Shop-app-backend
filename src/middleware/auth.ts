@@ -1,16 +1,12 @@
-import express, { RequestHandler } from 'express';
+import { RequestHandler } from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+
 import HttpError from '../model/http-error';
-
 import { IUser, UserDB } from '../model/user.model';
-import generateAccessToken from '../utils/generateAccessToken';
+import { IAuthMiddlewareRequest } from '../model/express/request/auth.request';
 
-interface IAuthMiddlewareRequest extends express.Request {
-	userId?: string;
-	user?: any;
-	accessToken?: string;
-}
+import generateAccessToken from '../utils/generateAccessToken';
 
 interface IVerify {
 	readonly _id: string;
@@ -19,79 +15,74 @@ interface IVerify {
 }
 
 let data: IVerify;
+
 const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 	let userDocument: Readonly<Omit<mongoose.Document, '_id'>> | null;
 
 	try {
-		// Gets the token
 		const token = (req.header('Authorization') as string).replace('Bearer ', '');
 
-		// Verfiy the token and get the userId --- data = token that has the user id
-		data = jwt.verify(token, process.env.JWT_KEY!) as IVerify;
+		// Verfiy token
+		jwt.verify(token, process.env.JWT_KEY!, (e, result) => {
+			data = result! as IVerify;
+		});
 
-		if (!data) {
-			return next(new HttpError('unable to auth', 401));
+		if (data) {
+			// Gets User by ID
+			userDocument = await UserDB.findById(data._id);
+
+			if (!userDocument) return next(new HttpError('unable to auth', 401));
+
+			// Passes userDocument for admin authintication
+			req.user = userDocument as IUser;
+
+			return next();
 		}
 
-		// Get the user object that matches the ID recived from the verification
-		userDocument = await UserDB.findById(data._id);
+		// Checks validity of refresh token
+		const refreshToken = (req.header('AuthorizationRefresh') as string).replace('Bearer ', '');
 
-		// Passes the user object for the later adminAuth auth
-		req.user = userDocument as IUser;
-
-		if (!userDocument) {
-			return next(new HttpError('unable to auth', 401));
+		// Checks for refreshToken in headers
+		if (refreshToken == null) {
+			return next(new HttpError('refresh token not valid, please log in again', 401));
 		}
+
+		// Verfiy token
+		data = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
+
+		// Get User by ID
+		const user = await UserDB.findById(data._id);
+
+		if (user) {
+			const userTokens: string[] = [];
+
+			user.tokens.map((token) => {
+				userTokens.push(token.token);
+			});
+
+			// Checks current refreshToken
+			if (!userTokens.includes(refreshToken)) {
+				return next(new HttpError('refresh token too old, login again', 401));
+			}
+		}
+
+		// Passes userDocument for admin authintication
+		req.user = user;
+
+		// Gets the id of the verified user inorder to generate new access token
+		const verifiedUserId = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
+
+		// Generates new access token
+		const accessToken = generateAccessToken(verifiedUserId._id);
+
+		// Passes the new token to the req
+		req.accessToken = accessToken;
 
 		next();
 	} catch (e: any) {
-		try {
-			// User failes auth and now checking for validity of refresh token
-			const refreshToken = (req.header('AuthorizationRefresh') as string).replace('Bearer ', '');
-
-			// Checks if there is refreshToken on the headers
-
-			if (refreshToken == null) {
-				return next(new HttpError('refresh token not valid, please log in again', 401));
-			}
-
-			// Verfiy the token and get the userId --- data = token that has the user id
-			data = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
-
-			// Get the user object that matches the ID recived from the verification
-			const user = await UserDB.findById(data._id);
-
-			// Passes the user object for the later adminAuth auth
-			req.user = user;
-
-			if (user) {
-				const userTokens: string[] = [];
-
-				user.tokens.map((token) => {
-					userTokens.push(token.token);
-				});
-
-				// Checks if the current refreshToken of the user is included in the 5 latest refreshTokens
-				if (!userTokens.includes(refreshToken)) {
-					return next(new HttpError('refresh token too old, login again', 401));
-				}
-			}
-
-			// Gets the id of the verified user inorder to generate new access token
-			const verifiedUserId = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
-
-			// Generates new access token
-			const accessToken = generateAccessToken(verifiedUserId._id);
-
-			// Passes the new token to the req
-			req.accessToken = accessToken;
-
-			next();
-		} catch (err) {
-			return next(
-				new HttpError('jwt malformed , please delete all local storage files and login again', 403),
-			);
-		}
+		return next(
+			new HttpError('jwt malformed , please delete all local storage files and login again', 403),
+		);
 	}
 };
 
