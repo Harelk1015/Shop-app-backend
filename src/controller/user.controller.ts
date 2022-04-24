@@ -43,7 +43,7 @@ export const changePassowrd: RequestHandler = async (req: IChangePasswordMiddlew
 
 		await user.save();
 
-		res.status(200).json({ message: 'password changed successfully' });
+		res.status(200).send({ message: 'password changed successfully' });
 	} catch (err) {
 		return next(new HttpError('cant change password', 400));
 	}
@@ -60,7 +60,7 @@ export const addFavorite: RequestHandler = async (req: IUserMiddlewareRequest, r
 		return next(new HttpError('Could not add favorite , please try to login', 403));
 	}
 
-	res.status(201).json({ message: 'Favorite added succcessffuly' });
+	res.status(201).send({ message: 'Favorite added succcessffuly' });
 };
 
 export const removeFavorite: RequestHandler = async (req: IUserMiddlewareRequest, res, next) => {
@@ -77,7 +77,7 @@ export const removeFavorite: RequestHandler = async (req: IUserMiddlewareRequest
 		return next(new HttpError('Could not remove favorite , please try again', 403));
 	}
 
-	res.status(201).json({ message: 'Favorite removed succcessffuly' });
+	res.status(201).send({ message: 'Favorite removed succcessffuly' });
 };
 
 export const getFavorites: RequestHandler = async (req: IUserMiddlewareRequest, res, next) => {
@@ -93,5 +93,5 @@ export const getFavorites: RequestHandler = async (req: IUserMiddlewareRequest, 
 
 	const userFavorites = user.favorites;
 
-	res.status(200).json({ userFavorites });
+	res.status(200).send({ userFavorites });
 };

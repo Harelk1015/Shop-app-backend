@@ -32,7 +32,7 @@ export const createTicket: RequestHandler = async (req: IUserMiddlewareRequest, 
 	try {
 		await newTicket.save();
 
-		res.status(201).json({ message: 'Ticket created successfully', newTicket });
+		res.status(201).send({ message: 'Ticket created successfully', newTicket });
 	} catch (err) {
 		console.log(err);
 	}
@@ -42,7 +42,7 @@ export const getTickets: RequestHandler = async (req, res, next) => {
 	try {
 		const tickets = await TicketDB.find();
 
-		res.status(200).json({ tickets });
+		res.status(200).send({ tickets });
 	} catch (err) {
 		return next(new HttpError('Could not find tickets', 404));
 	}
@@ -58,7 +58,7 @@ export const getTicket: RequestHandler = async (req, res, next) => {
 			return next(new HttpError('Could not find tickets', 404));
 		}
 
-		res.status(200).json({ ticket });
+		res.status(200).send({ ticket });
 	} catch (err) {
 		return next(new HttpError('Could not find tickets', 404));
 	}

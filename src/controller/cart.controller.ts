@@ -8,7 +8,7 @@ import HttpError from '../model/http-error';
 import { ICart, IUser, UserDB } from '../model/user.model';
 
 export const makeCart: RequestHandler = async (req: ICartMiddlewareRequest, res, next) => {
-	const { _id, name, price, size, quantity, imageUrl, parentId } = req.body;
+	const { _id, name, price, size, quantity, imageUrl } = req.body;
 	const userId = req?.user?._id;
 
 	try {
@@ -18,8 +18,11 @@ export const makeCart: RequestHandler = async (req: ICartMiddlewareRequest, res,
 			return next(new HttpError('No user found', 404));
 		}
 
+		const existingCartItemIndex = user.cart.findIndex((item) => {
+			return item._id.toHexString() === _id && item.size.toString() === size;
+		});
+
 		const cartProduct: ICart = {
-			parentId,
 			_id,
 			name,
 			price,
@@ -27,15 +30,6 @@ export const makeCart: RequestHandler = async (req: ICartMiddlewareRequest, res,
 			quantity,
 			imageUrl,
 		};
-
-		const existingCartItemIndex = user.cart.findIndex((item) => {
-			return item._id.toHexString() === _id;
-		});
-
-		// const existingCartItem = user.cart.map((item) => {
-		// 	if (item.parentId === _id && item.size === size) {
-		// 	}
-		// });
 
 		const existingCartItem = user.cart[existingCartItemIndex];
 
@@ -50,7 +44,7 @@ export const makeCart: RequestHandler = async (req: ICartMiddlewareRequest, res,
 
 		await user.save();
 
-		res.status(201).json({ message: 'Product added to cart successfully' });
+		res.status(201).send({ message: 'Product added to cart successfully' });
 	} catch (err) {
 		return next(new HttpError('cart creation failed', 403));
 	}
@@ -72,7 +66,7 @@ export const setCartItem: RequestHandler = async (req: ICartMiddlewareRequest, r
 
 	user.cart[matchedIndex].quantity = quantity;
 
-	res.status(202).json({ message: 'Cart item updated successfully' });
+	res.status(202).send({ message: 'Cart item updated successfully' });
 
 	await user.save();
 };
@@ -96,7 +90,7 @@ export const removeCartItem: RequestHandler = async (req: ICartMiddlewareRequest
 
 		await user.save();
 
-		return res.status(200).json({ message: 'item deleted successfully' });
+		return res.status(200).send({ message: 'item deleted successfully' });
 	} catch (err: any) {
 		return next(new HttpError(err.response, 403));
 	}

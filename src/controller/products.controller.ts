@@ -1,6 +1,5 @@
 /* eslint-disable prefer-template */
 import { RequestHandler } from 'express';
-import mongoose from 'mongoose';
 import HttpError from '../model/http-error';
 import { IProduct, ProductDB } from '../model/product.model';
 
@@ -9,28 +8,21 @@ import {
 	IGetProductsMiddlewareRequest,
 	IGetProductMiddlewareRequest,
 } from '../model/express/request/product.request';
-import { IUser, UserDB } from '../model/user.model';
 
 export const createProduct: RequestHandler = async (req: ICreateProductMiddlewareRequest, res, next) => {
 	try {
-		const newProdSizes = req.body.sizes.map((size) => {
-			return { _id: new mongoose.Types.ObjectId(), size };
-		});
-
-		console.log(newProdSizes);
-
 		const newProduct: IProduct = new ProductDB({
 			name: req.body.name,
 			price: req.body.price,
 			category: { kind: req.body.category.kind, sex: req.body.category.sex },
-			sizes: newProdSizes,
+			sizes: req.body.sizes,
 			imageUrl: req.body.imageUrl,
 		});
 
 		newProduct
 			.save()
 			.then(() => {
-				res.status(201).json({ message: newProduct });
+				res.status(201).send({ message: newProduct });
 			})
 			.catch((err) => next(new HttpError(err, 403)));
 	} catch (err) {
@@ -46,7 +38,7 @@ export const getProducts: RequestHandler = async (req: IGetProductsMiddlewareReq
 		'category.kind': kind,
 	});
 
-	res.status(200).json({ products });
+	res.status(200).send({ products });
 };
 
 export const getProduct: RequestHandler = async (req: IGetProductMiddlewareRequest, res, next) => {
@@ -60,7 +52,7 @@ export const getProduct: RequestHandler = async (req: IGetProductMiddlewareReque
 			return next(new HttpError('product not found', 401));
 		}
 
-		res.status(200).json({ product });
+		res.status(200).send({ product });
 	} catch (err) {
 		return next(new HttpError('id not found', 404));
 	}
@@ -68,10 +60,6 @@ export const getProduct: RequestHandler = async (req: IGetProductMiddlewareReque
 
 export const editProduct: RequestHandler = async (req, res, next) => {
 	const { _id, prodName, prodPrice, prodSizes } = req.body;
-
-	const sizes = prodSizes.map((size: string) => {
-		return { _id: new mongoose.Types.ObjectId(), size };
-	});
 
 	try {
 		const product = await ProductDB.findOne({
@@ -84,11 +72,11 @@ export const editProduct: RequestHandler = async (req, res, next) => {
 
 		product.name = prodName;
 		product.price = prodPrice;
-		product.sizes = sizes;
+		product.sizes = prodSizes;
 
 		await product.save();
 
-		res.status(200).json({ message: 'product changed successfuly', _id });
+		res.status(200).send({ message: 'product changed successfuly', _id });
 	} catch (err) {
 		return next(new HttpError('couldnt edit product', 404));
 	}
@@ -121,7 +109,7 @@ export const deleteProduct: RequestHandler = async (req, res, next) => {
 
 		// UserDB.
 
-		res.status(202).json({ message: 'product deleted successfully' });
+		res.status(202).send({ message: 'product deleted successfully' });
 	} catch (err) {
 		return next(new HttpError('could not find and delete product', 404));
 	}
@@ -136,5 +124,5 @@ export const navSearch: RequestHandler = async (req, res, next) => {
 	// Returns only 10 items
 	searchResults = searchResults.slice(0, 10);
 
-	res.status(200).json({ products: searchResults });
+	res.status(200).send({ products: searchResults });
 };

@@ -7,7 +7,7 @@ interface IProduct extends mongoose.Document {
 		sex: 'man' | 'woman';
 		kind: 'shirt' | 'pants' | 'shoes';
 	};
-	sizes: { size: number; _id: mongoose.Types.ObjectId }[];
+	sizes: number[];
 	imageUrl: string;
 }
 
@@ -26,7 +26,7 @@ const productSchema: mongoose.Schema = new mongoose.Schema(
 			required: true,
 		},
 		sizes: {
-			type: [{ _id: mongoose.Types.ObjectId, size: String }],
+			type: [String],
 			required: true,
 		},
 		imageUrl: { type: String },
