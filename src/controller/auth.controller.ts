@@ -1,41 +1,65 @@
-/* eslint-disable operator-linebreak */
-import { RequestHandler } from 'express';
-import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
+import { RequestHandler } from 'express';
+
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import HttpError from '../model/http-error';
-import generateAccessToken from '../utils/generateAccessToken';
 
 import { UserDB, IUser } from '../model/user.model';
-import { IAuthMiddlewareRequest } from '../model/express/request/auth.request';
+import generateAccessToken from '../utils/generateAccessToken';
+import HttpError from '../model/http-error';
 
-export const register: RequestHandler = async (req, res, next) => {
+import {
+	IAutoLoginMiddlewareRequest,
+	ILoginMiddlewareRequest,
+	IRegisterMiddlewareRequest,
+} from '../model/express/request/auth.request';
+import ServerGlobal from '../server-global';
+
+export const register: RequestHandler = async (
+	req: IRegisterMiddlewareRequest,
+	res,
+	next,
+) => {
+	ServerGlobal.getInstance().logger.info(
+		`<register>: Start processing request with email: ${req.body.email}`,
+	);
+
 	// Validate Username
 	if (req.body.username.length < 6 || req.body.username.length > 26) {
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register since provided invalid username with email ${req.body.email}`,
+		);
+
 		return next(new HttpError('username is not valid', 400));
 	}
 
+	// Validate Email
 	const isEmailValid =
 		/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(
 			req.body.email,
 		);
 
-	// Validate Email
 	if (!isEmailValid) {
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register since provided invalid email ${req.body.email}`,
+		);
+
 		return next(new HttpError('email is not valid', 400));
 	}
 
 	// Validate password
-	if (req.body.password.length < 5 || req.body.password.length > 30) {
-		return next(new HttpError('Please provide valid password', 400));
-	}
+	if (
+		req.body.password.length < 5 ||
+		req.body.password.length > 30 ||
+		req.body.passwordConfirmation.length < 5 ||
+		req.body.passwordConfirmation.length > 30 ||
+		req.body.passwordConfirmation !== req.body.password
+	) {
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register since provided invalid password with email ${req.body.email}`,
+		);
 
-	if (req.body.passwordConfirmation.length < 5 || req.body.passwordConfirmation.length > 30) {
-		return next(new HttpError('Please provide valid password', 400));
-	}
-
-	if (req.body.passwordConfirmation !== req.body.password) {
-		return next(new HttpError('Passwords dosent match', 400));
+		return next(new HttpError('Please provide a valid password', 400));
 	}
 
 	const [matchingUsername, matchingEmail] = await Promise.all([
@@ -46,11 +70,19 @@ export const register: RequestHandler = async (req, res, next) => {
 	]);
 
 	if (matchingUsername) {
-		return next(new HttpError('username already exists', 400));
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register since provided taken username with email ${req.body.email}`,
+		);
+
+		return next(new HttpError('UserName already exists', 400));
 	}
 
 	if (matchingEmail) {
-		return next(new HttpError('email already exists', 400));
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register since provided taken email with email ${req.body.email}`,
+		);
+
+		return next(new HttpError('E-Mail already exists', 400));
 	}
 
 	try {
@@ -77,6 +109,10 @@ export const register: RequestHandler = async (req, res, next) => {
 
 		await newUser.save();
 
+		ServerGlobal.getInstance().logger.info(
+			`<register>: Successfully registered user with ID: ${newUser.id}`,
+		);
+
 		res.status(201).send({
 			message: 'user created successfuly',
 			data: {
@@ -86,27 +122,45 @@ export const register: RequestHandler = async (req, res, next) => {
 			},
 		});
 	} catch (err) {
+		ServerGlobal.getInstance().logger.error(
+			`<register>: Failed to register because of server error: ${err}`,
+		);
+
 		return next(new HttpError('server error', 500));
 	}
 };
 
-export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
-	// find email match
+export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, next) => {
+	ServerGlobal.getInstance().logger.info(
+		`<login>: Start processing request with email: ${req.body.email}`,
+	);
 
+	// find email match
 	try {
 		const userByEmail = await UserDB.findOne({ email: req.body.email });
 
 		if (!userByEmail) {
+			ServerGlobal.getInstance().logger.error(
+				`<login>: Failed to login because the email ${req.body.email} does not match any user`,
+			);
+
 			return next(new HttpError('This email doesnt match any user', 400));
 		}
-		const compareResults = await bcrypt.compare(req.body.password, userByEmail.password);
+		const compareResults = await bcrypt.compare(
+			req.body.password,
+			userByEmail.password,
+		);
 
 		if (!compareResults) {
-			return next(new HttpError('password doesnt match', 400));
+			ServerGlobal.getInstance().logger.error(
+				`<login>:Failed to login because the password does not match the hashed password \
+				with email ${req.body.email}`,
+			);
+
+			return next(new HttpError('Passwords doesnt match', 400));
 		}
 
 		// Create new token to insert
-
 		const newToken = generateAccessToken(userByEmail._id);
 		const refreshToken = jwt.sign({ _id: userByEmail._id }, process.env.JWT_KEY!);
 
@@ -124,7 +178,12 @@ export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, ne
 
 		await userByEmail.save();
 
-		// Create new user object without password inorder to send it back to the client
+		ServerGlobal.getInstance().logger.info(
+			`<login>:Successfully logged in user in \
+			with email ${req.body.email} to user ID: ${userByEmail.id}`,
+		);
+
+		// Sends user object without password
 		const user = userByEmail;
 		req.user = user;
 		user.password = '';
@@ -138,11 +197,35 @@ export const login: RequestHandler = async (req: IAuthMiddlewareRequest, res, ne
 			},
 		});
 		return;
-	} catch (error) {
-		return next(new HttpError(`${error} error`, 500));
+	} catch (err) {
+		ServerGlobal.getInstance().logger.error(
+			`<login>: Failed to login with email ${req.body.email} because of server error: ${err}`,
+		);
+
+		return next(new HttpError('Server error', 500));
 	}
 };
 
-export const autoLogin: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
-	res.status(200).send({ user: req.user });
+export const autoLogin: RequestHandler = async (
+	req: IAutoLoginMiddlewareRequest,
+	res,
+	next,
+) => {
+	ServerGlobal.getInstance().logger.info(
+		`<autoLogin>: Start processing request to auto login user by ID : ${
+			req.user!._id
+		}`,
+	);
+
+	try {
+		res.status(200).send({ user: req.user });
+	} catch (err) {
+		ServerGlobal.getInstance().logger.error(
+			`<autologin>: Failed to autologin with user ID ${
+				req.user!._id
+			} because of server error: ${err}`,
+		);
+
+		return next(new HttpError('Server error', 500));
+	}
 };

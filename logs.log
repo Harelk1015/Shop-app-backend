@@ -1,0 +1,147 @@
+{"level":"error","message":"<register>: Failed to register since provided invalid fullname with email awdawd","timestamp":"2022-04-24T23:47:39.683Z"}
+{"level":"info","message":"<register>: Start processing request with email: qweqwe@gmail.com","timestamp":"2022-04-25T00:34:55.002Z"}
+{"level":"error","message":"<register>: Failed to register since provided taken username with email qweqwe@gmail.com","timestamp":"2022-04-25T00:34:55.168Z"}
+{"level":"info","message":"<register>: Start processing request with email: qweqwe@gmail.com","timestamp":"2022-04-25T00:35:04.246Z"}
+{"level":"info","message":"<register>: Successfully registered user with ID: 6265ecb88d9dae8079ecd122","timestamp":"2022-04-25T00:35:04.531Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-04-25T13:21:39.192Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:21:39.418Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:39.553Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:39.558Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:53.074Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:56.182Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:57.188Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:57.837Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:21:58.511Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:22:01.562Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:22:09.526Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T13:24:16.774Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:17.509Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:17.612Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T13:24:23.215Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:23.304Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:23.396Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T13:24:24.614Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:24.692Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:24.777Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-25T13:24:31.026Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6263d5eb26aa29c9cde3b763 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:24:31.208Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:34.257Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:24:34.355Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T13:26:31.754Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-25T13:26:31.833Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:42:07.859Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-04-25T13:42:09.965Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ds\"","timestamp":"2022-04-25T13:42:11.617Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dsa\"","timestamp":"2022-04-25T13:42:12.051Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dsaw\"","timestamp":"2022-04-25T13:42:12.366Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dsawd\"","timestamp":"2022-04-25T13:42:13.611Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dsaw\"","timestamp":"2022-04-25T13:42:13.948Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dsa\"","timestamp":"2022-04-25T13:42:14.368Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ds\"","timestamp":"2022-04-25T13:42:14.397Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-04-25T13:42:14.432Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:42:14.462Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-04-25T13:42:15.624Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-04-25T13:42:15.674Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:15.736Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asda\"","timestamp":"2022-04-25T13:42:16.827Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdas\"","timestamp":"2022-04-25T13:42:16.869Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasd\"","timestamp":"2022-04-25T13:42:16.924Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasda\"","timestamp":"2022-04-25T13:42:17.103Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdas\"","timestamp":"2022-04-25T13:42:17.129Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasd\"","timestamp":"2022-04-25T13:42:17.190Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasda\"","timestamp":"2022-04-25T13:42:17.335Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasdas\"","timestamp":"2022-04-25T13:42:17.379Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasdasd\"","timestamp":"2022-04-25T13:42:17.435Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasdasda\"","timestamp":"2022-04-25T13:42:17.612Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasdasdas\"","timestamp":"2022-04-25T13:42:17.636Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasdasdasdasd\"","timestamp":"2022-04-25T13:42:17.675Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:42:18.329Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-04-25T13:42:18.811Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-04-25T13:42:19.045Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:19.440Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T13:42:21.199Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T13:42:21.278Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:21.979Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6265c35e8017f7301047e476","timestamp":"2022-04-25T13:42:22.915Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6265c35e8017f7301047e476","timestamp":"2022-04-25T13:42:23.246Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:25.431Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asda\"","timestamp":"2022-04-25T13:42:25.601Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdas\"","timestamp":"2022-04-25T13:42:25.644Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdasd\"","timestamp":"2022-04-25T13:42:25.686Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-04-25T13:42:26.360Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-04-25T13:42:26.381Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:26.407Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T13:42:27.196Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T13:42:27.284Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:29.052Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:42:31.887Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-04-25T13:43:05.360Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-04-25T13:43:05.378Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:43:05.453Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-04-25T13:43:15.319Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asds\"","timestamp":"2022-04-25T13:43:16.659Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdss\"","timestamp":"2022-04-25T13:43:17.073Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asdss\"","timestamp":"2022-04-25T13:43:32.334Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"sasdss\"","timestamp":"2022-04-25T13:43:32.985Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ssasdss\"","timestamp":"2022-04-25T13:43:33.318Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:43:34.214Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-04-25T13:43:34.652Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:43:34.716Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:46:53.718Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-04-25T13:47:03.638Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dd\"","timestamp":"2022-04-25T13:47:04.052Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddd\"","timestamp":"2022-04-25T13:47:04.080Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddd\"","timestamp":"2022-04-25T13:47:04.112Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddd\"","timestamp":"2022-04-25T13:47:04.143Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddd\"","timestamp":"2022-04-25T13:47:04.181Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddd\"","timestamp":"2022-04-25T13:47:04.215Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddd\"","timestamp":"2022-04-25T13:47:04.246Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddd\"","timestamp":"2022-04-25T13:47:04.286Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddd\"","timestamp":"2022-04-25T13:47:04.314Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddd\"","timestamp":"2022-04-25T13:47:04.350Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddd\"","timestamp":"2022-04-25T13:47:04.382Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddd\"","timestamp":"2022-04-25T13:47:04.418Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddddd\"","timestamp":"2022-04-25T13:47:04.452Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.482Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.516Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.551Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.589Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.618Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.657Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddddddddddd\"","timestamp":"2022-04-25T13:47:04.684Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"dddddddddddddddddddddd\"","timestamp":"2022-04-25T13:47:05.496Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"ddddddddddddddddddddddd\"","timestamp":"2022-04-25T13:47:06.149Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T13:47:06.635Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:10.127Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:10.220Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:15.027Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:15.130Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:15.654Z"}
+{"level":"info","message":"<autoLogin>: Start processing request","timestamp":"2022-04-25T13:47:15.760Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:48:33.419Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:48:33.429Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:48:33.531Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:48:35.363Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T13:48:35.465Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T14:27:29.814Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T14:27:29.823Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetdched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T14:27:29.989Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T14:27:34.433Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T14:27:34.494Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T14:27:34.508Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetdched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T14:27:34.643Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T14:28:30.073Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T14:28:40.459Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T14:28:50.305Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:10:58.129Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:15:19.075Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:17:28.558Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:19:14.389Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:23:54.888Z"}
+{"level":"info","message":"<removeFavorite>: Start processing request to remove favorite item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T15:24:03.771Z"}
+{"level":"info","message":"<removeFavorite>: Successfuly removed item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T15:24:03.857Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:24:22.896Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:24:51.992Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:24:59.212Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:25:02.736Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:31:09.955Z"}

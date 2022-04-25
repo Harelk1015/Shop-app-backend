@@ -1,0 +1,10 @@
+{
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	},
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.fontWeight": "normal",
+	"prettier.printWidth": 90
+}

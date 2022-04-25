@@ -11,7 +11,7 @@ export interface ICart {
 	_id: mongoose.Types.ObjectId;
 	name: string;
 	price: number;
-	size: number;
+	size: string;
 	quantity: number;
 	imageUrl: string;
 }

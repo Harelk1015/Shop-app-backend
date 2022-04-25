@@ -1,30 +1,49 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 import { Express } from 'express';
 import mongoose from 'mongoose';
-import { IProduct } from '../../product.model';
+import { IUser } from '../../user.model';
 
 export interface ICreateProductMiddlewareRequest extends Express.Request {
-	body: {
+	user?: IUser;
+	readonly body: Readonly<{
 		name: string;
 		price: number;
 		category: { sex: string; kind: string };
 		sizes: [string];
 		imageUrl: string;
-	};
+	}>;
 }
 
 export interface IGetProductsMiddlewareRequest extends Express.Request {
-	body: {
+	user?: IUser;
+	readonly body: Readonly<{
 		sex: string;
 		kind: string;
-	};
+	}>;
 }
 
 export interface IGetProductMiddlewareRequest extends Express.Request {
-	body: {
+	readonly body: Readonly<{
 		_id: mongoose.Types.ObjectId;
-		name: string;
-		price: number;
-		sizes: number[];
-	};
+	}>;
+}
+
+export interface IEditProductMiddlewareRequest extends Express.Request {
+	readonly body: Readonly<{
+		_id: mongoose.Types.ObjectId;
+		prodName: string;
+		prodPrice: number;
+		prodSizes: number[];
+	}>;
+}
+
+export interface IDeleteProductMiddlewareRequest extends Express.Request {
+	readonly body: Readonly<{
+		_id: mongoose.Types.ObjectId;
+	}>;
+}
+
+export interface INavSearchProductMiddlewareRequest extends Express.Request {
+	readonly body: Readonly<{
+		searchInput: string;
+	}>;
 }

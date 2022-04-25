@@ -1,15 +1,31 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable import/prefer-default-export */
 import { RequestHandler } from 'express';
-import { IUserMiddlewareRequest } from '../model/express/request/ticket.request';
-import HttpError from '../model/http-error';
-import { ITicket, TicketDB } from '../model/ticket.model';
 
-export const createTicket: RequestHandler = async (req: IUserMiddlewareRequest, res, next) => {
+import { ITicket, TicketDB } from '../model/ticket.model';
+import HttpError from '../model/http-error';
+
+import {
+	ICreateTicketMiddlewareRequest,
+	IGetTicketMiddlewareRequest,
+} from '../model/express/request/ticket.request';
+import ServerGlobal from '../server-global';
+
+export const createTicket: RequestHandler = async (
+	req: ICreateTicketMiddlewareRequest,
+	res,
+	next,
+) => {
 	const { subject, email, message } = req.body;
-	const userId = req?.user?._id;
+	const userId = req.user!._id;
+
+	ServerGlobal.getInstance().logger.info(
+		`<createTicket>: Start processing request to create A ticket for user with ID ${userId}`,
+	);
 
 	if (subject.length < 6) {
+		ServerGlobal.getInstance().logger.error(
+			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the subject is not valid`,
+		);
+
 		return next(new HttpError('Subject must be atleast 6 characters', 403));
 	}
 
@@ -19,47 +35,106 @@ export const createTicket: RequestHandler = async (req: IUserMiddlewareRequest, 
 		);
 
 	if (!isEmailValid) {
+		ServerGlobal.getInstance().logger.error(
+			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the email is not valid`,
+		);
+
 		return next(new HttpError('Please enter A valid E-Mail', 403));
 	}
 
 	if (message.length < 15) {
+		ServerGlobal.getInstance().logger.error(
+			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the message is not valid`,
+		);
+
 		return next(new HttpError('Message must be atleast 15 characters', 403));
 	}
 
 	// From now on the ticket is valid
-
-	const newTicket: ITicket = new TicketDB({ subject, email, message, ownerId: userId });
 	try {
+		const newTicket: ITicket = new TicketDB({
+			subject,
+			email,
+			message,
+			ownerId: userId,
+		});
+
 		await newTicket.save();
+
+		ServerGlobal.getInstance().logger.info(
+			`<createTicket>: Succesffuly created ticket by user with ID ${userId}`,
+		);
 
 		res.status(201).send({ message: 'Ticket created successfully', newTicket });
 	} catch (err) {
-		console.log(err);
+		ServerGlobal.getInstance().logger.error(
+			`<createTicket>: Failed to create ticket for user with ID ${userId} because of server error: ${err}`,
+		);
+
+		return next(new HttpError('Server error', 500));
 	}
 };
 
 export const getTickets: RequestHandler = async (req, res, next) => {
+	ServerGlobal.getInstance().logger.info(
+		'<getTickets>: Start processing to get all tickets by admin',
+	);
+
 	try {
 		const tickets = await TicketDB.find();
 
+		if (!tickets) {
+			ServerGlobal.getInstance().logger.error(
+				'<getTickets>: Failed to get tickets because there are none',
+			);
+
+			return next(new HttpError('Could not find tickets', 404));
+		}
+		ServerGlobal.getInstance().logger.info(
+			'<getTickets>: Successfully fetched all tickets by admin',
+		);
+
 		res.status(200).send({ tickets });
 	} catch (err) {
-		return next(new HttpError('Could not find tickets', 404));
+		ServerGlobal.getInstance().logger.error(
+			`<getTickets>: Failed to get tickets because of server error : ${err}`,
+		);
+
+		return next(new HttpError('Server error', 500));
 	}
 };
 
-export const getTicket: RequestHandler = async (req, res, next) => {
+export const getTicket: RequestHandler = async (
+	req: IGetTicketMiddlewareRequest,
+	res,
+	next,
+) => {
 	const { ticketId } = req.body;
+
+	ServerGlobal.getInstance().logger.info(
+		`<getTicket>: Start processing to get ticket with ID ${ticketId} by admin`,
+	);
 
 	try {
 		const ticket = await TicketDB.findById(ticketId);
 
 		if (!ticket) {
+			ServerGlobal.getInstance().logger.error(
+				`<getTicket>: Failed to get ticket with ID ${ticketId} because it was not found`,
+			);
+
 			return next(new HttpError('Could not find tickets', 404));
 		}
+		ServerGlobal.getInstance().logger.info(
+			`<getTicket>: Successfully fetched and retrived ticket with ID ${ticketId} by admin`,
+		);
 
 		res.status(200).send({ ticket });
 	} catch (err) {
-		return next(new HttpError('Could not find tickets', 404));
+		ServerGlobal.getInstance().logger.error(
+			`<getTicket>: Failed to get ticket with ID ${ticketId} because of server err : ${err}`,
+		);
+
+		return next(new HttpError('Server error', 500));
 	}
 };

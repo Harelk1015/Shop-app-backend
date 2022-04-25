@@ -4,7 +4,10 @@ import jwt from 'jsonwebtoken';
 
 import HttpError from '../model/http-error';
 import { IUser, UserDB } from '../model/user.model';
-import { IAuthMiddlewareRequest } from '../model/express/request/auth.request';
+import {
+	IAdminAuthMiddlewareRequest,
+	IAuthMiddlewareRequest,
+} from '../model/express/request/auth.request';
 
 import generateAccessToken from '../utils/generateAccessToken';
 
@@ -40,11 +43,16 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 		}
 
 		// Checks validity of refresh token
-		const refreshToken = (req.header('AuthorizationRefresh') as string).replace('Bearer ', '');
+		const refreshToken = (req.header('AuthorizationRefresh') as string).replace(
+			'Bearer ',
+			'',
+		);
 
 		// Checks for refreshToken in headers
 		if (refreshToken == null) {
-			return next(new HttpError('refresh token not valid, please log in again', 401));
+			return next(
+				new HttpError('refresh token not valid, please log in again', 401),
+			);
 		}
 
 		// Verfiy token
@@ -67,7 +75,7 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 		}
 
 		// Passes userDocument for admin authintication
-		req.user = user;
+		req.user = user as IUser;
 
 		// Gets the id of the verified user inorder to generate new access token
 		const verifiedUserId = jwt.verify(refreshToken, process.env.JWT_KEY!) as IVerify;
@@ -81,79 +89,22 @@ const auth: RequestHandler = async (req: IAuthMiddlewareRequest, res, next) => {
 		next();
 	} catch (e: any) {
 		return next(
-			new HttpError('jwt malformed , please delete all local storage files and login again', 403),
+			new HttpError(
+				'jwt malformed , please delete all local storage files and login again',
+				403,
+			),
 		);
 	}
 };
 
-const adminAuth: RequestHandler = (req: IAuthMiddlewareRequest, res, next) => {
+const adminAuth: RequestHandler = (req: IAdminAuthMiddlewareRequest, res, next) => {
 	const user = req.user as IUser;
 
 	if (user.role !== 'admin') {
-		// Checks if the user has admin role
 		return next(new HttpError('User is not admin', 401));
 	}
 
 	next();
 };
-
-// const adminAuth = async (
-//   req: IAdminAuthM_iddlewareRequest,
-//   res: IAdminAuthM_iddlewareResponse,
-//   next: express.NextFunction
-// ) => {
-//   ServerGlobal.getInstance().logger.info(
-//     '[admin auth m_iddleware]: Start processing request'
-//   );
-
-//   try {
-//     const token = (req.header('Authorization') as string).replace(
-//       'Bearer ',
-//       ''
-//     );
-
-//     const data = jwt.verify(token, process.env.JWT_PWD) as IVerify;
-
-//     const adminDocument: Readonly<
-//       Pick<IUserDocument, keyof mongoose.Document | 'email'>
-//     > | null = await UserDB.findBy_id(data._id, { email: 1 });
-
-//     if (!adminDocument || adminDocument.email !== process.env.ADMIN_EMAIL) {
-//       ServerGlobal.getInstance().logger.error(
-//         `[admin auth m_iddleware]: Failed to authenticate administrator for _id: ${data._id}`
-//       );
-
-//       res.status(401).send({
-//         success: false,
-//         message: 'Unable to authenticate',
-//       });
-//       return;
-//     }
-
-//     ServerGlobal.getInstance().logger.info(
-//       `[admin auth m_iddleware]: Successfully authenticated administrator with _id ${data._id}`
-//     );
-
-//     next();
-//   } catch (e) {
-//     ServerGlobal.getInstance().logger.error(
-//       `[admin auth m_iddleware]: Failed to authenticate administrator because of error: ${e}`
-//     );
-
-//     if ((e.message = 'jwt malformed')) {
-//       res.status(401).send({
-//         success: false,
-//         message: 'Unable to authenticate',
-//       });
-//       return;
-//     }
-
-//     res.status(500).send({
-//       success: false,
-//       message: 'Server error',
-//     });
-//     return;
-//   }
-// };
 
 export { auth, adminAuth };
