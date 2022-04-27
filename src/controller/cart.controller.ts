@@ -42,21 +42,20 @@ export const addItem: RequestHandler = async (
 
 		const mongooseId = new mongoose.Types.ObjectId(_id);
 
-		const cartProduct: ICart = {
-			_id: mongooseId,
-			name,
-			price,
-			size,
-			quantity,
-			imageUrl,
-		};
-
 		if (existingCartItem) {
-			const updatedItem = existingCartItem;
-			updatedItem.quantity += +1;
+			existingCartItem.quantity += +1;
 
-			user.cart[existingCartItemIndex] = updatedItem;
+			user.cart[existingCartItemIndex] = existingCartItem;
 		} else {
+			const cartProduct: ICart = {
+				_id: mongooseId,
+				name,
+				price,
+				size,
+				quantity,
+				imageUrl,
+			};
+
 			user.cart.push(cartProduct);
 		}
 
@@ -83,7 +82,7 @@ export const setCartItem: RequestHandler = async (
 	res,
 	next,
 ) => {
-	const { prodId, quantity } = req.body;
+	const { prodId, quantity, size } = req.body;
 	const userId = req.user!._id;
 
 	ServerGlobal.getInstance().logger.info(
@@ -102,7 +101,10 @@ export const setCartItem: RequestHandler = async (
 		}
 
 		const existingCartItemIndex = user.cart.findIndex((item) => {
-			return item._id.toHexString() === prodId.toString();
+			return (
+				item._id.toHexString() === prodId.toString() &&
+				item.size.toString() === size.toString()
+			);
 		});
 
 		user.cart[existingCartItemIndex].quantity = quantity;
@@ -110,7 +112,7 @@ export const setCartItem: RequestHandler = async (
 		await user.save();
 
 		ServerGlobal.getInstance().logger.info(
-			`<setCartItem>: Successfully set quantity for item ID ${prodId} for user  with ID ${userId}`,
+			`<setCartItem>: Successfully set quantity for item ID ${prodId} for user with ID ${userId}`,
 		);
 
 		res.status(202).send({

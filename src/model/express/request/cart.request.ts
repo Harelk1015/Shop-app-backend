@@ -19,6 +19,7 @@ export interface ISetCartMiddlewareRequest extends express.Request {
 	readonly body: Readonly<{
 		prodId: string;
 		quantity: number;
+		size: string;
 	}>;
 }
 

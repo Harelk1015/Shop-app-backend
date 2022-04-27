@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-expressions */
 import mongoose from 'mongoose';
-import { IProduct } from './product.model';
 
 interface Token {
 	token: string;

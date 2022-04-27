@@ -146,6 +146,7 @@ export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, n
 
 			return next(new HttpError('This email doesnt match any user', 400));
 		}
+
 		const compareResults = await bcrypt.compare(
 			req.body.password,
 			userByEmail.password,

@@ -145,3 +145,293 @@
 {"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:24:59.212Z"}
 {"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:25:02.736Z"}
 {"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T15:31:09.955Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T16:39:30.018Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T16:39:37.950Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:39:38.021Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-25T16:39:38.028Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:39:38.175Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T16:42:01.285Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:42:01.359Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-25T16:42:01.362Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:42:01.365Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:42:01.453Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T16:42:01.513Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:54:12.097Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:54:12.179Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Pants","timestamp":"2022-04-25T16:54:16.858Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Pants","timestamp":"2022-04-25T16:54:16.936Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:54:21.869Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:54:21.947Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Pants","timestamp":"2022-04-25T16:54:26.145Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Pants","timestamp":"2022-04-25T16:54:26.225Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-25T16:54:32.883Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:55:19.062Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Shirts","timestamp":"2022-04-25T16:55:19.140Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Pants","timestamp":"2022-04-25T16:55:22.992Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Pants","timestamp":"2022-04-25T16:55:23.071Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-04-25T17:15:13.970Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:14.188Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:14.284Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:14.289Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:14.371Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:14.446Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-25T17:15:18.583Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-25T17:15:18.665Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:25.139Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:15:25.226Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:16:16.580Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:16:16.666Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Pants","timestamp":"2022-04-25T17:16:20.019Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:16:20.095Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Pants","timestamp":"2022-04-25T17:16:20.100Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:16:20.250Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:19:17.477Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:19:17.563Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-25T17:32:44.265Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:44.341Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-25T17:32:44.343Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:44.345Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:44.440Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:44.488Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:45.943Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:46.046Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:48.393Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:48.564Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:48.910Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:48.996Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:51.081Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:51.232Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:51.561Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:51.646Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:59.177Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:59.340Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:59.700Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:32:59.802Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:03.832Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:03.996Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:04.332Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:04.420Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:33:45.237Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:49.903Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:50.012Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:50.281Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:33:50.661Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:53.209Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:53.576Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:33:55.838Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:33:56.148Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:34:00.921Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:34:01.196Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:34:03.773Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:34:03.878Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:34:52.751Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:35:00.062Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:35:00.156Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:35:24.151Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:35:24.254Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:37:48.384Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:37:48.490Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:39:27.302Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:39:27.404Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:40:17.896Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:40:19.215Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:40:19.291Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:42:24.916Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:42:26.004Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:42:26.086Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:42:42.024Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:42:44.698Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:42:44.776Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:42:49.946Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:42:50.023Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:43:13.082Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:43:14.273Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:43:14.356Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:43:24.749Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:43:41.247Z"}
+{"level":"error","message":"<setCartItem>: Failed to set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375 because of server error: TypeError: Cannot set property 'quantity' of undefined","timestamp":"2022-04-25T17:43:41.326Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-25T17:43:59.732Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:01.876Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:02.067Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:02.617Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:02.713Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:05.703Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:05.870Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:06.378Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:44:06.473Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:49.726Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:49.814Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Pants","timestamp":"2022-04-25T17:50:52.471Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:52.548Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Pants","timestamp":"2022-04-25T17:50:52.557Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:52.709Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:59.069Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:50:59.157Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:51:00.811Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:51:00.815Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T17:51:00.970Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:53:33.345Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:53:33.451Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:08.168Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:08.253Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Shirts","timestamp":"2022-04-25T20:54:14.755Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:14.831Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Shirts","timestamp":"2022-04-25T20:54:15.284Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:15.366Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Pants","timestamp":"2022-04-25T20:54:20.340Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:20.415Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Pants","timestamp":"2022-04-25T20:54:20.419Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:20.568Z"}
+{"level":"info","message":"<addFavorite>: Start processing request to add favorite item ID 6266c51bb0cb9465f71af279 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:24.269Z"}
+{"level":"info","message":"<addFavorite>: Successfuly added favorite item ID 6266c51bb0cb9465f71af279 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:24.359Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:41.695Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:54:41.780Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T20:55:21.386Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:21.459Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6263d5eb26aa29c9cde3b763","timestamp":"2022-04-25T20:55:21.460Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:21.846Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:21.916Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:21.942Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:45.736Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:45.740Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:45.891Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:47.499Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:55:47.607Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-25T20:55:48.803Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-25T20:55:48.886Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:14.097Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:14.188Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:24.478Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:24.648Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:25.042Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:25.131Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 6263d5eb26aa29c9cde3b763 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:28.769Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:28.925Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:29.254Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:29.356Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:38.348Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:38.432Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:44.292Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:44.297Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:44.438Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:51.436Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:51.523Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:53.124Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 6263d5eb26aa29c9cde3b763 successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:53.289Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:53.644Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:53.740Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 6263d5eb26aa29c9cde3b763 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:54.535Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 6263d5eb26aa29c9cde3b763 successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:54.687Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:54.991Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:55.071Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:56.623Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:56:56.722Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:57:01.815Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-25T20:57:01.897Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-26T20:04:19.688Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-26T22:13:40.683Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-26T22:13:40.772Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-26T22:16:56.181Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-26T22:16:56.266Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:36:42.416Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:36:42.521Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Woman and Shirts","timestamp":"2022-04-27T15:36:46.892Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:36:46.926Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Woman and Shirts","timestamp":"2022-04-27T15:36:47.414Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:36:47.493Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:37:07.526Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:37:07.619Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:39:21.026Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:45:05.444Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:47:25.970Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-04-27T15:50:22.489Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:22.704Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:22.842Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:22.850Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:22.855Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:23.022Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:29.956Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:30.052Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:30.054Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:30.056Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:30.211Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:31.990Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:32.089Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:32.092Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:32.094Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:32.244Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:33.216Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:33.316Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:33.318Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:33.320Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:33.472Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:34.694Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:34.823Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:34.826Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:34.830Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:34.976Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:36.113Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:36.240Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:36.242Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:36.244Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:36.394Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:37.623Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:37.711Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:37.714Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:37.715Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:37.866Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:38.999Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:39.099Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:39.101Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:39.103Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:50:39.254Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-04-27T15:52:05.398Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:52:05.616Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:52:05.727Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:52:05.739Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:52:05.743Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:52:05.903Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:54:34.186Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:54:34.268Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:34.276Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:34.439Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:38.584Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:38.937Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 6266c5f2b0cb9465f71af284 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:39.969Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 6266c5f2b0cb9465f71af284 successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:40.144Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:40.507Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:40.603Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:54:41.826Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:41.908Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:54:41.911Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:42.067Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-27T15:54:51.471Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6268214b11a7206c23f56f85 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:54:51.635Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-27T15:55:07.583Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6268214b11a7206c23f56f85 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:07.755Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-27T15:55:11.293Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6268214b11a7206c23f56f85 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:11.467Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:15.883Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:15.976Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:55:29.014Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:55:29.092Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:29.099Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:29.260Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-27T15:55:30.158Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6268214b11a7206c23f56f85 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:30.327Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:31.318Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:55:31.414Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:58:35.893Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:58:41.555Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T15:59:47.237Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:59:51.153Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 6268214b11a7206c23f56f85","timestamp":"2022-04-27T15:59:51.246Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:59:51.266Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:59:51.453Z"}
+{"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-04-27T15:59:52.734Z"}
+{"level":"info","message":"<addItem>: Successfully added item with ID 6268214b11a7206c23f56f85 to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:59:52.925Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:59:54.698Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T15:59:54.793Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T16:00:01.761Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T16:11:33.080Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T16:11:33.193Z"}
