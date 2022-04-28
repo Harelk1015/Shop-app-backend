@@ -47,7 +47,7 @@ router.post(
 	bodyKeys([
 		{ key: '_id', type: 'string' },
 		{ key: 'prodName', type: 'string' },
-		{ key: 'prodPrice', type: 'object' },
+		{ key: 'prodPrice', type: 'number' },
 		{ key: 'prodSizes', type: 'object' },
 	]),
 	auth,
@@ -55,6 +55,12 @@ router.post(
 	editProduct,
 );
 
-router.post('/delete-product', bodyKeys([{ key: '_id', type: 'string' }]), auth, adminAuth, deleteProduct);
+router.post(
+	'/delete-product',
+	bodyKeys([{ key: '_id', type: 'string' }]),
+	auth,
+	adminAuth,
+	deleteProduct,
+);
 
 export default router;

@@ -468,3 +468,38 @@
 {"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:30:58.882Z"}
 {"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:31:00.165Z"}
 {"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:31:01.223Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:44:00.544Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:44:00.830Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:44:01.804Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:44:02.170Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:44:03.183Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:44:04.100Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:44:04.347Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;\"","timestamp":"2022-04-28T15:44:04.503Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`\"","timestamp":"2022-04-28T15:44:04.632Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:44:04.808Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-28T15:44:07.851Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:07.933Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-28T15:44:07.937Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:08.108Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626ab4509d635f6e53a241a5","timestamp":"2022-04-28T15:44:08.995Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:09.078Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626ab4509d635f6e53a241a5","timestamp":"2022-04-28T15:44:09.082Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:09.245Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T15:44:11.105Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T15:44:11.192Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626ab4509d635f6e53a241a5","timestamp":"2022-04-28T15:44:11.769Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626ab4509d635f6e53a241a5","timestamp":"2022-04-28T15:44:11.857Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:44:29.819Z"}
+{"level":"info","message":"<getProducts>: Start processing request get products by categoeries : Man and Shirts","timestamp":"2022-04-28T15:44:39.774Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:39.853Z"}
+{"level":"info","message":"<getProducts>: Successfully got products by categoeries : Man and Shirts","timestamp":"2022-04-28T15:44:39.862Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:40.017Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:40.850Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:40.927Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:40.933Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:44:41.090Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T15:44:42.966Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T15:44:43.049Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:43.549Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:43.632Z"}
