@@ -503,3 +503,23 @@
 {"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T15:44:43.049Z"}
 {"level":"info","message":"<getProduct>: Start processing request to get item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:43.549Z"}
 {"level":"info","message":"<getProduct>: Successfully fetched item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:44:43.632Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:48:12.549Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-04-28T15:48:13.441Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:48:13.662Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:48:13.789Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:48:13.795Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:48:13.803Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:48:13.981Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T15:48:14.713Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T15:48:14.796Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:48:15.838Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:48:15.926Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:49:04.086Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:49:12.497Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:49:16.952Z"}
+{"level":"info","message":"<editProduct>: Request to edit product with ID 626970c70606fb8da1bef557 has started","timestamp":"2022-04-28T15:49:19.669Z"}
+{"level":"info","message":"<editProduct>: Successfully edited item with ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:49:20.048Z"}
+{"level":"info","message":"<getProduct>: Start processing request to get item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:49:20.093Z"}
+{"level":"info","message":"<getProduct>: Successfully fetched item by ID 626970c70606fb8da1bef557","timestamp":"2022-04-28T15:49:20.174Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:49:20.185Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:49:20.471Z"}

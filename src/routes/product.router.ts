@@ -47,7 +47,7 @@ router.post(
 	bodyKeys([
 		{ key: '_id', type: 'string' },
 		{ key: 'prodName', type: 'string' },
-		{ key: 'prodPrice', type: 'number' },
+		{ key: 'prodPrice', type: 'string' },
 		{ key: 'prodSizes', type: 'object' },
 	]),
 	auth,
