@@ -130,6 +130,14 @@ export const editProduct: RequestHandler = async (
 		`<editProduct>: Request to edit product with ID ${_id} has started`,
 	);
 
+	if (!_id) {
+		ServerGlobal.getInstance().logger.error(
+			`<editProduct>: Failed to edit product because product with ID ${_id} was not found`,
+		);
+
+		return next(new HttpError('product not found', 401));
+	}
+
 	try {
 		const product = await ProductDB.findOne({
 			_id,

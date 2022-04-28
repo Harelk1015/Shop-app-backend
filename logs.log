@@ -435,3 +435,36 @@
 {"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-27T16:00:01.761Z"}
 {"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T16:11:33.080Z"}
 {"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-27T16:11:33.193Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T15:29:42.516Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:29:55.087Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T15:29:55.226Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:29:56.319Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'\"","timestamp":"2022-04-28T15:29:57.121Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'\"","timestamp":"2022-04-28T15:30:02.229Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'d\"","timestamp":"2022-04-28T15:30:02.560Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'\"","timestamp":"2022-04-28T15:30:03.120Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:30:03.260Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'\"","timestamp":"2022-04-28T15:30:05.061Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%\"","timestamp":"2022-04-28T15:30:05.490Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'\"","timestamp":"2022-04-28T15:30:05.799Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'%\"","timestamp":"2022-04-28T15:30:06.267Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'%'\"","timestamp":"2022-04-28T15:30:06.777Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'%'d\"","timestamp":"2022-04-28T15:30:07.453Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'%'\"","timestamp":"2022-04-28T15:30:08.127Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'%\"","timestamp":"2022-04-28T15:30:08.246Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%'\"","timestamp":"2022-04-28T15:30:08.413Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'%\"","timestamp":"2022-04-28T15:30:08.533Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"'\"","timestamp":"2022-04-28T15:30:08.679Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:30:08.814Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:30:11.190Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:30:49.233Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"q\"","timestamp":"2022-04-28T15:30:50.649Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"\"","timestamp":"2022-04-28T15:30:51.327Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`\"","timestamp":"2022-04-28T15:30:53.708Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;\"","timestamp":"2022-04-28T15:30:55.291Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:30:56.580Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:30:56.746Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--d\"","timestamp":"2022-04-28T15:30:58.268Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:30:58.882Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;-\"","timestamp":"2022-04-28T15:31:00.165Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"`;--\"","timestamp":"2022-04-28T15:31:01.223Z"}
