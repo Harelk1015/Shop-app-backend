@@ -27,5 +27,6 @@ export interface IRemoveCartMiddlewareRequest extends express.Request {
 	user?: IUser;
 	readonly body: Readonly<{
 		_id: string;
+		size: string;
 	}>;
 }

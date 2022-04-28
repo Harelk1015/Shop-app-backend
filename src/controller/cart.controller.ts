@@ -132,7 +132,7 @@ export const removeCartItem: RequestHandler = async (
 	res,
 	next,
 ) => {
-	const { _id } = req.body;
+	const { _id, size } = req.body;
 	const userId = req.user!._id;
 
 	ServerGlobal.getInstance().logger.info(
@@ -151,7 +151,10 @@ export const removeCartItem: RequestHandler = async (
 		}
 
 		const matchedIndex = user.cart.findIndex((item) => {
-			return item._id.toHexString() === _id.toString();
+			return (
+				item._id.toHexString() === _id.toString() &&
+				item.size.toString() === size.toString()
+			);
 		});
 
 		user.cart.splice(matchedIndex, 1);
