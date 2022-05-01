@@ -574,3 +574,73 @@
 {"level":"info","message":"<removeCartItem>: Item ID 62696ddd0606fb8da1bef4ec successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:00:02.446Z"}
 {"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:00:03.164Z"}
 {"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:00:03.285Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-04-28T16:03:04.027Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:19.909Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:20.027Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 62696ddd0606fb8da1bef4ec for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:21.012Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 62696ddd0606fb8da1bef4ec successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:21.206Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:21.739Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:03:21.996Z"}
+{"level":"info","message":"<createTicket>: Start processing request to create A ticket for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:09:17.491Z"}
+{"level":"error","message":"<createTicket>: Failed to create A ticket for user with ID 62613a3fd8c974550f77c375 because the message is not valid","timestamp":"2022-04-28T16:09:17.493Z"}
+{"level":"info","message":"<createTicket>: Start processing request to create A ticket for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:09:19.667Z"}
+{"level":"info","message":"<createTicket>: Succesffuly created ticket by user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:09:19.983Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T16:09:23.196Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T16:09:23.283Z"}
+{"level":"info","message":"<getTicket>: Start processing to get ticket with ID 626abc2f71d41c704e17ea59 by admin","timestamp":"2022-04-28T16:09:24.694Z"}
+{"level":"info","message":"<getTicket>: Successfully fetched and retrived ticket with ID 626abc2f71d41c704e17ea59 by admin","timestamp":"2022-04-28T16:09:24.796Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T16:09:29.308Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T16:09:29.395Z"}
+{"level":"info","message":"<createTicket>: Start processing request to create A ticket for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:09:47.808Z"}
+{"level":"info","message":"<createTicket>: Succesffuly created ticket by user with ID 62613a3fd8c974550f77c375","timestamp":"2022-04-28T16:09:47.898Z"}
+{"level":"info","message":"<getTickets>: Start processing to get all tickets by admin","timestamp":"2022-04-28T16:09:49.336Z"}
+{"level":"info","message":"<getTickets>: Successfully fetched all tickets by admin","timestamp":"2022-04-28T16:09:49.421Z"}
+{"level":"info","message":"<getTicket>: Start processing to get ticket with ID 626abc4b71d41c704e17ea62 by admin","timestamp":"2022-04-28T16:09:50.854Z"}
+{"level":"info","message":"<getTicket>: Successfully fetched and retrived ticket with ID 626abc4b71d41c704e17ea62 by admin","timestamp":"2022-04-28T16:09:50.936Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-01T04:50:31.796Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:50:35.648Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:51:02.332Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:51:05.311Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:51:33.894Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:51:45.024Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:01.874Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:05.016Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:05.847Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:07.543Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:07.577Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:07.900Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:10.595Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:11.560Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:14.980Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:53:15.854Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:59:39.855Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:59:40.207Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:59:42.032Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T04:59:42.307Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:00:55.949Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:00:57.679Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:01:00.070Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:19.300Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:22.802Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:23.532Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:23.542Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:38.648Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:49.827Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:57.282Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:57.299Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:03:57.531Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:04:02.494Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:04:04.622Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:04:31.474Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:06:30.656Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:07:43.921Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:07:45.810Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:07:48.397Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:04.890Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:06.861Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:12.505Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:15.290Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:17.564Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:21.218Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:08:22.930Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-01T05:11:11.371Z"}
