@@ -30,7 +30,7 @@ export const register: RequestHandler = async (
 			`<register>: Failed to register since provided invalid username with email ${req.body.email}`,
 		);
 
-		return next(new HttpError('username is not valid', 400));
+		return next(new HttpError('username is not valid (atleast 6 charecters)', 400));
 	}
 
 	// Validate Email
@@ -59,7 +59,7 @@ export const register: RequestHandler = async (
 			`<register>: Failed to register since provided invalid password with email ${req.body.email}`,
 		);
 
-		return next(new HttpError('Please provide a valid password', 400));
+		return next(new HttpError('Please provide a valid password (atleast 5 charecters)', 400));
 	}
 
 	const [matchingUsername, matchingEmail] = await Promise.all([

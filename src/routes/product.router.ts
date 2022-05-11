@@ -19,6 +19,7 @@ router.post(
 	'/add-product',
 	bodyKeys([
 		{ key: 'name', type: 'string' },
+		{ key: 'price', type: 'string' },
 		{ key: 'category', type: 'object' },
 		{ key: 'sex', type: 'string' },
 		{ key: 'sizes', type: 'object' },
@@ -32,8 +33,8 @@ router.post(
 router.post(
 	'/get-products',
 	bodyKeys([
-		{ key: 'kind', type: 'string' },
-		{ key: 'sex', type: 'string' },
+		// { key: 'kind', type: 'string' },
+		// { key: 'sex', type: 'string' },
 	]),
 	getProducts,
 );

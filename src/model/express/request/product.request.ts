@@ -16,8 +16,8 @@ export interface ICreateProductMiddlewareRequest extends Express.Request {
 export interface IGetProductsMiddlewareRequest extends Express.Request {
 	user?: IUser;
 	readonly body: Readonly<{
-		sex: string;
-		kind: string;
+		sex?: string;
+		kind?: string;
 	}>;
 }
 
@@ -31,7 +31,7 @@ export interface IEditProductMiddlewareRequest extends Express.Request {
 	readonly body: Readonly<{
 		_id: mongoose.Types.ObjectId;
 		prodName: string;
-		prodPrice: number;
+		prodPrice: string;
 		prodSizes: number[];
 	}>;
 }

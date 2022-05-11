@@ -27,6 +27,6 @@ router.post(
 	login,
 );
 
-router.get('/autologin', auth, autoLogin);
+router.get('/auto-login', auth, autoLogin);
 
 export default router;

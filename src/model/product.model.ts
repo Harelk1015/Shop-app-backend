@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 interface IProduct extends mongoose.Document {
 	name: string;
-	price: number;
+	price: string;
 	category: {
 		sex: 'man' | 'woman';
 		kind: 'shirt' | 'pants' | 'shoes';
@@ -18,7 +18,7 @@ const productSchema: mongoose.Schema = new mongoose.Schema(
 			required: true,
 		},
 		price: {
-			type: Number,
+			type: String,
 			required: true,
 		},
 		category: {

@@ -56,19 +56,34 @@ export const getProducts: RequestHandler = async (
 	next,
 ) => {
 	const { sex, kind } = req.body;
+	let products: IProduct[] = [];
 
 	ServerGlobal.getInstance().logger.info(
 		`<getProducts>: Start processing request get products by categoeries : ${sex} and ${kind}`,
 	);
 
 	try {
-		const products: IProduct[] = await ProductDB.find({
-			'category.sex': sex,
-			'category.kind': kind,
-		});
+		if (sex && !kind) {
+			products = await ProductDB.find({
+				'category.sex': sex,
+			});
+		}
+
+		if (kind && !sex) {
+			products = await ProductDB.find({
+				'category.kind': kind,
+			});
+		}
+
+		if (sex && kind) {
+			products = await ProductDB.find({
+				'category.sex': sex,
+				'category.kind': kind ? kind : '',
+			});
+		}
 
 		ServerGlobal.getInstance().logger.info(
-			`<getProducts>: Successfully got products by categoeries : ${sex} and ${kind}`,
+			`<getProducts>: Successfully fetched products by categoeries : ${sex} and ${kind}`,
 		);
 
 		res.status(200).send({ products });
