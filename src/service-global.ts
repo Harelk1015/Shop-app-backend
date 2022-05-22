@@ -3,10 +3,10 @@ import path from 'path';
 
 import winston from 'winston';
 
-class ServerGlobal {
+class ServiceGlobal {
 	private readonly _logger: winston.Logger;
 
-	private static _instance: ServerGlobal;
+	private static _instance: ServiceGlobal;
 
 	private constructor() {
 		this._logger = winston.createLogger({
@@ -27,14 +27,14 @@ class ServerGlobal {
 
 	/**
 	 * Getter for singelton instance
-	 * @returns ServerGlobal singelton instance
+	 * @returns ServiceGlobal singelton instance
 	 */
 	public static getInstance() {
 		if (this._instance) {
 			return this._instance;
 		}
 
-		this._instance = new ServerGlobal();
+		this._instance = new ServiceGlobal();
 		return this._instance;
 	}
 
@@ -47,4 +47,4 @@ class ServerGlobal {
 	}
 }
 
-export default ServerGlobal;
+export default ServiceGlobal;

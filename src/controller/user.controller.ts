@@ -12,7 +12,7 @@ import {
 	IGetFavoritesMiddlewareRequest,
 	IRemoveFavoritedMiddlewareRequest,
 } from '../model/express/request/user.request';
-import ServerGlobal from '../server-global';
+import ServiceGlobal from '../service-global';
 
 export const changePassowrd: RequestHandler = async (
 	req: IChangePasswordMiddlewareRequest,
@@ -22,7 +22,7 @@ export const changePassowrd: RequestHandler = async (
 	const userId = req.user!._id;
 	const { oldPassword, newPassword } = req.body;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<changePassowrd>: Start processing request to change password for user with ID ${userId}`,
 	);
 
@@ -30,7 +30,7 @@ export const changePassowrd: RequestHandler = async (
 		const user = await UserDB.findById(userId);
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<changePassowrd>: Failed to change password for user with ID ${userId} because there is not user with that ID`,
 			);
 
@@ -38,7 +38,7 @@ export const changePassowrd: RequestHandler = async (
 		}
 
 		if (!oldPassword) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<changePassowrd>: Failed to change password for user with ID ${userId} because the provided password does not match the user's password`,
 			);
 
@@ -46,7 +46,7 @@ export const changePassowrd: RequestHandler = async (
 		}
 
 		if (!newPassword || newPassword.length < 5 || newPassword.length > 30) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<changePassowrd>: Failed to change password for user with ID ${userId} because the provided password doesnt match the requirements`,
 			);
 
@@ -56,7 +56,7 @@ export const changePassowrd: RequestHandler = async (
 		const compareResults = await bcrypt.compare(oldPassword, user.password);
 
 		if (!compareResults) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<changePassowrd>: Failed to change password for user with ID ${userId} because the entered password doesnt match the user's password `,
 			);
 
@@ -70,13 +70,13 @@ export const changePassowrd: RequestHandler = async (
 
 		await user.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<changePassowrd>: Successfully changed password for user with ID ${userId}`,
 		);
 
 		res.status(200).send({ message: 'password changed successfully' });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<changePassowrd>: Failed to change password for user with ID ${userId} because of server error: ${err}`,
 		);
 
@@ -92,7 +92,7 @@ export const addFavorite: RequestHandler = async (
 	const { productId } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<addFavorite>: Start processing request to add favorite item ID ${productId} for user with ID ${userId}`,
 	);
 
@@ -101,14 +101,14 @@ export const addFavorite: RequestHandler = async (
 	});
 
 	if (!user) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<addFavorite>: Failed to to add favorite item ID ${productId} for user with ID ${userId} because user was not found`,
 		);
 
 		return next(new HttpError('Could not add favorite , please try to login', 403));
 	}
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<addFavorite>: Successfuly added favorite item ID ${productId} for user with ID ${userId}`,
 	);
 
@@ -123,13 +123,13 @@ export const removeFavorite: RequestHandler = async (
 	const { productId } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<removeFavorite>: Start processing request to remove favorite item ID ${productId} for user with ID ${userId}`,
 	);
 
 	try {
 		if (!productId || !userId) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<removeFavorite>: Failed to remove favorite item ID ${productId} for user with ID ${userId} because the client didnt provide product and user ID`,
 			);
 
@@ -141,7 +141,7 @@ export const removeFavorite: RequestHandler = async (
 		});
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<removeFavorite>: Failed to remove favorite item ID ${productId} for user with ID ${userId} because user was not found`,
 			);
 
@@ -150,13 +150,13 @@ export const removeFavorite: RequestHandler = async (
 			);
 		}
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<removeFavorite>: Successfuly removed item ID ${productId} for user with ID ${userId}`,
 		);
 
 		res.status(201).send({ message: 'Favorite removed succcessffuly' });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<removeFavorite>: Failed to remove item ID ${productId} for user with ID ${userId} because of server error: ${err}`,
 		);
 
@@ -171,7 +171,7 @@ export const getFavorites: RequestHandler = async (
 ) => {
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<getFavorites>: Start processing request get favorites for user with ID ${userId}`,
 	);
 
@@ -181,7 +181,7 @@ export const getFavorites: RequestHandler = async (
 		}).populate('favorites', '_id name imageUrl');
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<getFavorites>: Failed to get favorites for user with ID ${userId} because the user was not found`,
 			);
 
@@ -190,7 +190,7 @@ export const getFavorites: RequestHandler = async (
 
 		const userFavorites = user.favorites;
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<getFavorites>: Successfully fetched favorites for user with ID ${userId}`,
 		);
 

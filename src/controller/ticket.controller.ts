@@ -7,7 +7,7 @@ import {
 	ICreateTicketMiddlewareRequest,
 	IGetTicketMiddlewareRequest,
 } from '../model/express/request/ticket.request';
-import ServerGlobal from '../server-global';
+import ServiceGlobal from '../service-global';
 
 export const createTicket: RequestHandler = async (
 	req: ICreateTicketMiddlewareRequest,
@@ -17,12 +17,12 @@ export const createTicket: RequestHandler = async (
 	const { subject, email, message } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<createTicket>: Start processing request to create A ticket for user with ID ${userId}`,
 	);
 
 	if (subject.length < 6) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the subject is not valid`,
 		);
 
@@ -35,7 +35,7 @@ export const createTicket: RequestHandler = async (
 		);
 
 	if (!isEmailValid) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the email is not valid`,
 		);
 
@@ -43,7 +43,7 @@ export const createTicket: RequestHandler = async (
 	}
 
 	if (message.length < 15) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<createTicket>: Failed to create A ticket for user with ID ${userId} because the message is not valid`,
 		);
 
@@ -61,13 +61,13 @@ export const createTicket: RequestHandler = async (
 
 		await newTicket.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<createTicket>: Succesffuly created ticket by user with ID ${userId}`,
 		);
 
 		res.status(201).send({ message: 'Ticket created successfully', newTicket });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<createTicket>: Failed to create ticket for user with ID ${userId} because of server error: ${err}`,
 		);
 
@@ -76,7 +76,7 @@ export const createTicket: RequestHandler = async (
 };
 
 export const getTickets: RequestHandler = async (req, res, next) => {
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		'<getTickets>: Start processing to get all tickets by admin',
 	);
 
@@ -84,19 +84,19 @@ export const getTickets: RequestHandler = async (req, res, next) => {
 		const tickets = await TicketDB.find();
 
 		if (!tickets) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				'<getTickets>: Failed to get tickets because there are none',
 			);
 
 			return next(new HttpError('Could not find tickets', 404));
 		}
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			'<getTickets>: Successfully fetched all tickets by admin',
 		);
 
 		res.status(200).send({ tickets });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<getTickets>: Failed to get tickets because of server error : ${err}`,
 		);
 
@@ -111,7 +111,7 @@ export const getTicket: RequestHandler = async (
 ) => {
 	const { ticketId } = req.body;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<getTicket>: Start processing to get ticket with ID ${ticketId} by admin`,
 	);
 
@@ -119,19 +119,19 @@ export const getTicket: RequestHandler = async (
 		const ticket = await TicketDB.findById(ticketId);
 
 		if (!ticket) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<getTicket>: Failed to get ticket with ID ${ticketId} because it was not found`,
 			);
 
 			return next(new HttpError('Could not find tickets', 404));
 		}
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<getTicket>: Successfully fetched and retrived ticket with ID ${ticketId} by admin`,
 		);
 
 		res.status(200).send({ ticket });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<getTicket>: Failed to get ticket with ID ${ticketId} because of server err : ${err}`,
 		);
 

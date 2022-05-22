@@ -9,7 +9,7 @@ import {
 	IRemoveCartMiddlewareRequest,
 	ISetCartMiddlewareRequest,
 } from '../model/express/request/cart.request';
-import ServerGlobal from '../server-global';
+import ServiceGlobal from '../service-global';
 
 export const addItem: RequestHandler = async (
 	req: IMakeCartMiddlewareRequest,
@@ -19,13 +19,13 @@ export const addItem: RequestHandler = async (
 	const { _id, name, price, size, quantity, imageUrl } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info('<addItem>: Start processing request');
+	ServiceGlobal.getInstance().logger.info('<addItem>: Start processing request');
 
 	try {
 		const user = await UserDB.findById(userId);
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<addItem>: Failed to set cart because user ID ${userId} wasnt found`,
 			);
 
@@ -61,7 +61,7 @@ export const addItem: RequestHandler = async (
 
 		await user.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<addItem>: Successfully added item with ID ${_id} to user with ID ${userId}`,
 		);
 
@@ -69,7 +69,7 @@ export const addItem: RequestHandler = async (
 			message: 'Product added to cart successfully',
 		});
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<addItem>: Failed to set cart for user ID ${userId} because of server error: ${err}`,
 		);
 
@@ -85,7 +85,7 @@ export const setCartItem: RequestHandler = async (
 	const { prodId, quantity, size } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<setCartItem>: Start processing request to set quantity item ID ${prodId} for user with ID ${userId}`,
 	);
 
@@ -93,7 +93,7 @@ export const setCartItem: RequestHandler = async (
 		const user = await UserDB.findById(userId);
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<setCartItem>: Failed to set quantity for item ID ${prodId} for user with ID ${userId} because no user found for that id`,
 			);
 
@@ -111,7 +111,7 @@ export const setCartItem: RequestHandler = async (
 
 		await user.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<setCartItem>: Successfully set quantity for item ID ${prodId} for user with ID ${userId}`,
 		);
 
@@ -119,7 +119,7 @@ export const setCartItem: RequestHandler = async (
 			message: 'Cart item updated successfully',
 		});
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<setCartItem>: Failed to set quantity for item ID ${prodId} for user  with ID ${userId} because of server error: ${err}`,
 		);
 
@@ -135,7 +135,7 @@ export const removeCartItem: RequestHandler = async (
 	const { _id, size } = req.body;
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<removeCartItem>: Start processing request to remove item ID ${_id} for user  with ID ${userId}`,
 	);
 
@@ -143,7 +143,7 @@ export const removeCartItem: RequestHandler = async (
 		const user = await UserDB.findById(userId);
 
 		if (!user) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<removeCartItem>: Failed to remove item ID ${_id} for user with ID ${userId}`,
 			);
 
@@ -161,13 +161,13 @@ export const removeCartItem: RequestHandler = async (
 
 		await user.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<removeCartItem>: Item ID ${_id} successfully remove from user with id ${userId}`,
 		);
 
 		return res.status(200).send({ message: 'item deleted successfully' });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<removeCartItem>: Failed to register because of server error: ${err}`,
 		);
 

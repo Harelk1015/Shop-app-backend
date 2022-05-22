@@ -12,7 +12,7 @@ import {
 	IDeleteProductMiddlewareRequest,
 	INavSearchProductMiddlewareRequest,
 } from '../model/express/request/product.request';
-import ServerGlobal from '../server-global';
+import ServiceGlobal from '../service-global';
 
 export const createProduct: RequestHandler = async (
 	req: ICreateProductMiddlewareRequest,
@@ -21,7 +21,7 @@ export const createProduct: RequestHandler = async (
 ) => {
 	const userId = req.user!._id;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<createProduct>: Start processing request from user with id ${userId} to create product`,
 	);
 
@@ -36,13 +36,13 @@ export const createProduct: RequestHandler = async (
 
 		await newProduct.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<createProduct>: Product ${req.body.name} created successfully by user with ID ${userId}`,
 		);
 
 		res.status(201).send({ newProduct });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<createProduct>: Product creation by user with ID ${userId} failed because of server error: ${err}`,
 		);
 
@@ -58,7 +58,7 @@ export const getProducts: RequestHandler = async (
 	const { sex, kind } = req.body;
 	let products: IProduct[] = [];
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<getProducts>: Start processing request get products by categoeries : ${sex} and ${kind}`,
 	);
 
@@ -82,13 +82,13 @@ export const getProducts: RequestHandler = async (
 			});
 		}
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<getProducts>: Successfully fetched products by categoeries : ${sex} and ${kind}`,
 		);
 
 		res.status(200).send({ products });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<getProducts>: Failed to get products because of server error: ${err}`,
 		);
 
@@ -103,7 +103,7 @@ export const getProduct: RequestHandler = async (
 ) => {
 	const { _id } = req.body;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<getProduct>: Start processing request to get item by ID ${_id}`,
 	);
 
@@ -113,20 +113,20 @@ export const getProduct: RequestHandler = async (
 		});
 
 		if (!product) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<getProduct>: Product with ID ${_id} was not found`,
 			);
 
 			return next(new HttpError('product not found', 401));
 		}
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<getProduct>: Successfully fetched item by ID ${_id}`,
 		);
 
 		res.status(200).send({ product });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<getProduct>: Failed to fetch item by ID ${_id} because of server error: ${err}`,
 		);
 
@@ -141,12 +141,12 @@ export const editProduct: RequestHandler = async (
 ) => {
 	const { _id, prodName, prodPrice, prodSizes } = req.body;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<editProduct>: Request to edit product with ID ${_id} has started`,
 	);
 
 	if (!_id) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<editProduct>: Failed to edit product because product with ID ${_id} was not found`,
 		);
 
@@ -159,7 +159,7 @@ export const editProduct: RequestHandler = async (
 		});
 
 		if (!product) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<editProduct>: Failed to edit product because product with ID ${_id} was not found`,
 			);
 
@@ -172,13 +172,13 @@ export const editProduct: RequestHandler = async (
 
 		await product.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<editProduct>: Successfully edited item with ID ${_id}`,
 		);
 
 		res.status(200).send({ message: 'product changed successfuly', _id });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<editProduct>: Failed to edit product with ID ${_id} because of server error: ${err}`,
 		);
 
@@ -193,7 +193,7 @@ export const deleteProduct: RequestHandler = async (
 ) => {
 	const { _id } = req.body;
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<deleteProduct>: Start processing request to remove item ID ${_id} from the shop`,
 	);
 
@@ -202,20 +202,20 @@ export const deleteProduct: RequestHandler = async (
 		const product = await ProductDB.findByIdAndRemove(_id);
 
 		if (!product) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<deleteProduct>: Failed to remove item ID ${_id} from the shop because it was not found`,
 			);
 
 			return next(new HttpError('Could not find product and delete', 404));
 		}
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<deleteProduct>: Sucessfully removed item ID ${_id} from the shop`,
 		);
 
 		res.status(202).send({ message: 'product deleted successfully' });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<deleteProduct>: Failed to register because of server error: ${err}`,
 		);
 
@@ -229,7 +229,7 @@ export const navSearch: RequestHandler = async (
 ) => {
 	const searchInput = req.body.searchInput.trim();
 
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<searchInput>: Start processing request to find product by the text : "${searchInput}"`,
 	);
 
@@ -243,7 +243,7 @@ export const navSearch: RequestHandler = async (
 
 		res.status(200).send({ products: searchResults });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<searchInput>: Failed to find item by the text : "${searchInput}" because of server error: ${err}`,
 		);
 

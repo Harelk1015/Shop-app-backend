@@ -13,20 +13,20 @@ import {
 	ILoginMiddlewareRequest,
 	IRegisterMiddlewareRequest,
 } from '../model/express/request/auth.request';
-import ServerGlobal from '../server-global';
+import ServiceGlobal from '../service-global';
 
 export const register: RequestHandler = async (
 	req: IRegisterMiddlewareRequest,
 	res,
 	next,
 ) => {
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<register>: Start processing request with email: ${req.body.email}`,
 	);
 
 	// Validate Username
 	if (req.body.username.length < 6 || req.body.username.length > 26) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register since provided invalid username with email ${req.body.email}`,
 		);
 
@@ -40,7 +40,7 @@ export const register: RequestHandler = async (
 		);
 
 	if (!isEmailValid) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register since provided invalid email ${req.body.email}`,
 		);
 
@@ -55,7 +55,7 @@ export const register: RequestHandler = async (
 		req.body.passwordConfirmation.length > 30 ||
 		req.body.passwordConfirmation !== req.body.password
 	) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register since provided invalid password with email ${req.body.email}`,
 		);
 
@@ -70,7 +70,7 @@ export const register: RequestHandler = async (
 	]);
 
 	if (matchingUsername) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register since provided taken username with email ${req.body.email}`,
 		);
 
@@ -78,7 +78,7 @@ export const register: RequestHandler = async (
 	}
 
 	if (matchingEmail) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register since provided taken email with email ${req.body.email}`,
 		);
 
@@ -109,7 +109,7 @@ export const register: RequestHandler = async (
 
 		await newUser.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<register>: Successfully registered user with ID: ${newUser.id}`,
 		);
 
@@ -122,7 +122,7 @@ export const register: RequestHandler = async (
 			},
 		});
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<register>: Failed to register because of server error: ${err}`,
 		);
 
@@ -131,7 +131,7 @@ export const register: RequestHandler = async (
 };
 
 export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, next) => {
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<login>: Start processing request with email: ${req.body.email}`,
 	);
 
@@ -140,7 +140,7 @@ export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, n
 		const userByEmail = await UserDB.findOne({ email: req.body.email });
 
 		if (!userByEmail) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<login>: Failed to login because the email ${req.body.email} does not match any user`,
 			);
 
@@ -153,7 +153,7 @@ export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, n
 		);
 
 		if (!compareResults) {
-			ServerGlobal.getInstance().logger.error(
+			ServiceGlobal.getInstance().logger.error(
 				`<login>:Failed to login because the password does not match the hashed password \
 				with email ${req.body.email}`,
 			);
@@ -179,7 +179,7 @@ export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, n
 
 		await userByEmail.save();
 
-		ServerGlobal.getInstance().logger.info(
+		ServiceGlobal.getInstance().logger.info(
 			`<login>:Successfully logged in user in \
 			with email ${req.body.email} to user ID: ${userByEmail.id}`,
 		);
@@ -199,7 +199,7 @@ export const login: RequestHandler = async (req: ILoginMiddlewareRequest, res, n
 		});
 		return;
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<login>: Failed to login with email ${req.body.email} because of server error: ${err}`,
 		);
 
@@ -212,7 +212,7 @@ export const autoLogin: RequestHandler = async (
 	res,
 	next,
 ) => {
-	ServerGlobal.getInstance().logger.info(
+	ServiceGlobal.getInstance().logger.info(
 		`<autoLogin>: Start processing request to auto login user by ID : ${
 			req.user!._id
 		}`,
@@ -221,7 +221,7 @@ export const autoLogin: RequestHandler = async (
 	try {
 		res.status(200).send({ user: req.user });
 	} catch (err) {
-		ServerGlobal.getInstance().logger.error(
+		ServiceGlobal.getInstance().logger.error(
 			`<autologin>: Failed to autologin with user ID ${
 				req.user!._id
 			} because of server error: ${err}`,

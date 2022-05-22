@@ -3805,3 +3805,54 @@
 {"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-18T22:00:41.055Z"}
 {"level":"info","message":"<addItem>: Start processing request","timestamp":"2022-05-18T22:00:42.482Z"}
 {"level":"info","message":"<addItem>: Successfully added item with ID 626972f30606fb8da1bef58c to user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-18T22:00:42.639Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:53:10.839Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:53:12.977Z"}
+{"level":"info","message":"<setCartItem>: Start processing request to set quantity item ID 626820da11a7206c23f56f70 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:54:39.251Z"}
+{"level":"info","message":"<setCartItem>: Successfully set quantity for item ID 626820da11a7206c23f56f70 for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:54:41.863Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:54:43.757Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T06:55:51.911Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T06:55:55.655Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 626820da11a7206c23f56f70 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:14.532Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 626820da11a7206c23f56f70 successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:14.861Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:15.455Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 62696a200606fb8da1bef3f5 for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:16.420Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 62696a200606fb8da1bef3f5 successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:16.755Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T06:58:17.151Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T07:02:03.345Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T07:02:26.590Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T07:04:17.107Z"}
+{"level":"info","message":"MongoDB database connection done successfully","timestamp":"2022-05-22T07:05:18.475Z"}
+{"level":"info","message":"<login>: Start processing request with email: taltal@gmail.com","timestamp":"2022-05-22T07:06:48.511Z"}
+{"level":"info","message":"<login>:Successfully logged in user in \t\t\twith email taltal@gmail.com to user ID: 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:48.922Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:49.103Z"}
+{"level":"info","message":"<getFavorites>: Start processing request get favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:49.123Z"}
+{"level":"info","message":"<getFavorites>: Successfully fetched favorites for user with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:49.374Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:51.633Z"}
+{"level":"info","message":"<removeCartItem>: Start processing request to remove item ID 62681c8c11a7206c23f56eab for user  with ID 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:53.247Z"}
+{"level":"info","message":"<removeCartItem>: Item ID 62681c8c11a7206c23f56eab successfully remove from user with id 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:53.591Z"}
+{"level":"info","message":"<autoLogin>: Start processing request to auto login user by ID : 62613a3fd8c974550f77c375","timestamp":"2022-05-22T07:06:53.983Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"s\"","timestamp":"2022-05-22T07:07:00.234Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"s\"","timestamp":"2022-05-22T07:07:23.459Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-05-22T07:07:51.697Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"d\"","timestamp":"2022-05-22T07:08:15.595Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:17.199Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:17.248Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-05-22T07:08:17.316Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:18.039Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:18.653Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:19.070Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:19.131Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-05-22T07:08:19.227Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:20.304Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:20.898Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:21.726Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:21.740Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-05-22T07:08:21.807Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:22.591Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:22.755Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:23.141Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:23.825Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"asd\"","timestamp":"2022-05-22T07:08:23.890Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"as\"","timestamp":"2022-05-22T07:08:24.314Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:24.464Z"}
+{"level":"info","message":"<searchInput>: Start processing request to find product by the text : \"a\"","timestamp":"2022-05-22T07:08:36.905Z"}

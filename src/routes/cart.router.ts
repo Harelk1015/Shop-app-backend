@@ -26,7 +26,6 @@ router.post(
 	bodyKeys([
 		{ key: 'prodId', type: 'string' },
 		{ key: 'quantity', type: 'number' },
-		// { key: 'size', type: 'string' },
 	]),
 	auth,
 	setCartItem,
